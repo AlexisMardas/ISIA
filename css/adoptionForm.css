@@ -1,0 +1,34 @@
+head {
+    background-color:white;
+}
+
+
+#user {
+    margin-right: 20px;
+  }
+
+
+body {
+    background-image: url("../images/bgimg.webp");
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    margin-bottom: 60px; /* footer height */
+}
+
+.adoption-form {
+    border: 1px solid black;
+    padding: 20px;
+    margin-top: 10% ;
+    margin: 0 auto;
+    border-radius: 10px;
+    width: 40%;
+    background-color: #f9f9f9;
+    overflow-y: auto; 
+    max-height: 80%;
+    min-width: 300px;
+}
+
+a:hover {
+    text-decoration: underline;
+  }

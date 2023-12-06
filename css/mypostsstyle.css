@@ -1,0 +1,108 @@
+head {
+    background-color:white;
+}
+
+
+#user {
+    margin-right: 20px;
+  }
+
+
+body {
+    background-image: url("../images/bgimg.webp");
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    margin-bottom: 60px; /* footer height */
+}
+
+
+.pet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 5%;
+    padding: 10px;
+    margin-top: 2%;
+  }
+
+  /* CSS for the Pet Adoption Post Component */
+  .pet-post {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #eee1cd;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 400px; /* Fixed height for the post container */
+    width: auto;
+  }
+
+  .pet-image-container {
+    margin-top: 5%;
+    width: 100%;
+    height: 50%; /* Maximum height for the image container */
+    position: relative;
+    border: 1px solid #eee1cd;
+  }
+
+  .pet-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .pet-details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Expand to fill the available space */
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  .upload-date {
+    font-size: 12px;
+    color: #777;
+  }
+
+  .pet-name {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .buttons {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+      
+  } 
+
+  .button {
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+#deletebutton {
+    background-color: #BE6621;
+    
+    
+}
+
+#morebutton {
+    background-color: #1C39A5;
+    
+}
+
+@media (max-width: 600px) {
+    .pet-post {
+      height: auto; /* Remove fixed height for smaller screens */
+    }
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }

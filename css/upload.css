@@ -1,0 +1,63 @@
+head {
+    background-color:white;
+}
+
+
+#user {
+    margin-right: 20px;
+  }
+
+
+body {
+    background-image: url("../images/bgimg.webp");
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    margin-bottom: 60px; /* footer height */
+}
+
+.upload-form {
+    border: 1px solid black;
+    padding: 20px;
+    margin-top: 20px;
+    margin: 0 auto;
+    border-radius: 10px;
+    width: 60%;
+    background-color: #f9f9f9;
+    overflow-y: auto; 
+    max-height: 80%;
+    min-width: 300px;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.navbar .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+
+
+.gender-input {
+    position: relative;
+}
+
+.gender-cursor {
+    position: absolute;
+    top: 50%;
+    right: 5px; 
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #000; 
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+  }

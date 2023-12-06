@@ -1,0 +1,80 @@
+head {
+    background-color:white;
+}
+
+
+#user {
+    margin-right: 20px;
+  }
+
+
+body {
+    background-image: url("../images/bgimg.webp");
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    margin-bottom: 60px; /* footer height */
+}
+
+.pet-posts {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 2%;
+}
+
+.post {
+    background-color: #eee1cd;
+    border: 1px solid black;
+    border-radius: 2px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    max-width: 1500px; 
+  
+}
+
+.post img {
+    max-width: 200px; 
+    height: auto;
+    border-radius: 10px 0 0 10px;
+}
+
+.post-info {
+    flex: 1;
+    padding: 10px;
+}
+
+.post h2 {
+    margin: 5px 0;
+}
+
+.post p {
+    color: #644f3e;
+}
+
+button {
+    background-color: #BE6621;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    .post {
+        border-radius: 10px;
+        flex-direction: column;
+    }
+
+    .post img {
+        max-width: 100%; 
+        border-radius: 5px 5px 0 0;
+    }
+}
+
+a:hover {
+    text-decoration: underline;
+  }
