@@ -16,15 +16,16 @@ public class Pet {
     private boolean sterilized;
 	private boolean chipped;
     private String description;
+    private String animalType;
 
 
-     public Pet() {
+    public Pet() {
         
     }
 
 
     //Constructor
-    public Pet(int petid, int age, float weight, String location, String gender, String pname, String maincolor,
+    public Pet(int petid, String animalType, int age, float weight, String location, String gender, String pname, String maincolor,
             Blob photo, boolean fullyVaccinated, boolean chronicdesease, boolean sterilized, boolean chipped,
             String description) {
         this.petid = petid;
@@ -40,6 +41,7 @@ public class Pet {
         this.sterilized = sterilized;
         this.chipped = chipped;
         this.description = description;
+        this.animalType = animalType;
 
    
     //End Constructor
@@ -82,6 +84,16 @@ public class Pet {
     public void setPname(String pname) {
         this.pname = pname;
     }
+    public String getAnimalType() {
+        return animalType;
+    }
+
+
+    public void setAnimalType(String animalType) {
+        this.animalType = animalType;
+    }
+
+
     public String getMaincolor() {
         return maincolor;
     }

@@ -58,7 +58,7 @@ public class Post {
         if (animal == "") {
             query += " animalType = animaltype";
         } else {
-            query += " animalType = " + animal;
+            query += " animalType = " + "\"" + animal + "\"";
         }
 
         if (age == "") {

@@ -3,7 +3,7 @@ import java.sql.*;
 
 
 
-public class Users {
+public class User {
     private String fullName;
     private int userId; 
     private String email;
@@ -15,7 +15,7 @@ public class Users {
     private boolean isAdmin;
 
   
-    public Users(String fullName, int userId, String email, String phoneNumber, String location,
+    public User(String fullName, int userId, String email, String phoneNumber, String location,
                  Date dob, String username, String password, boolean isAdmin) {
         this.fullName = fullName;
         this.userId = userId;
@@ -27,6 +27,25 @@ public class Users {
         this.password = password;
         this.isAdmin = isAdmin;
     }
+
+	
+
+	public User(String fullName, String email, String phoneNumber, String location, Date dob, String username,
+			String password) {
+		this.fullName = fullName;
+		this.email = email;
+		this.phoneNumber = phoneNumber;
+		this.location = location;
+		this.dob = dob;
+		this.username = username;
+		this.password = password;
+	}
+
+
+
+	public User() {
+
+	}
 
 
 
@@ -104,12 +123,12 @@ public class Users {
     }
 
 
-	public Users verifyUser(String username, String password) throws Exception {
-		Users user = null;
+	public User verifyUser(String username, String password) throws Exception {
+		User user = null;
 		DbConnection db = new DbConnection();
 		Connection con = null;
 		PreparedStatement stmt = null;
-		String query = "SELECT * FROM Users WHERE username =? AND password=? AND isAdmin=0;";
+		String query = "SELECT * FROM Users WHERE username =? AND pswd =? AND isAdmin=0;";
 
 		try {
 			con = db.getConnection();
@@ -123,9 +142,12 @@ public class Users {
 				String email = rs.getString("email");
 				String phoneNumber = rs.getString("phoneNumber");
                 String location = rs.getString("location");
-				String pasword = rs.getString("pasword");
-				user = new Users(fullName, userId, email, phoneNumber, location,
-                 dob, username, pasword, isAdmin);
+				String pswd = rs.getString("pswd");
+				String uname = rs.getString("username");
+				boolean isAdmin = rs.getBoolean("isAdmin");
+
+				user = new User(fullName, userId, email, phoneNumber, location,
+                 dob, uname, pswd, isAdmin);
 			} else {
 				rs.close();
 				stmt.close();
@@ -138,7 +160,7 @@ public class Users {
 			return user;
 			
 		} catch (Exception e) {
-			throw new Exception("Could not connect with database .");
+			throw new Exception(" 1 Could not connect to database. ");
 
 		} finally {
 			try {
@@ -154,12 +176,12 @@ public class Users {
 
 
 
-    public Users verifAdmin(String username, String password) throws Exception {
-		Users user = null;
+    public User verifyAdmin(String username, String password) throws Exception {
+		User user = null;
 		DbConnection db = new DbConnection();
 		Connection con = null;
 		PreparedStatement stmt = null;
-		String query = "SELECT * FROM Users WHERE username =? AND password=? AND isAdmin=1;";
+		String query = "SELECT * FROM Users WHERE username =? AND pswd=? AND isAdmin=1;";
 
 		try {
 			con = db.getConnection();
@@ -173,9 +195,12 @@ public class Users {
 				String email = rs.getString("email");
 				String phoneNumber = rs.getString("phoneNumber");
                 String location = rs.getString("location");
-				String pasword = rs.getString("pasword");
-				user = new Users(fullName, userId, email, phoneNumber, location,
-                 dob, username, pasword, isAdmin);
+				String pswd = rs.getString("pswd");
+				String uname = rs.getString("username");
+				boolean isAdmin = rs.getBoolean("isAdmin");
+
+				user = new User(fullName, userId, email, phoneNumber, location,
+                 dob, uname, pswd, isAdmin);
 			} else {
 				rs.close();
 				stmt.close();
@@ -188,7 +213,7 @@ public class Users {
 			return user;
 			
 		} catch (Exception e) {
-			throw new Exception("Could not connect with database .");
+			throw new Exception("2 Could not connect to database.");
 
 		} finally {
 			try {
@@ -204,7 +229,7 @@ public class Users {
 
 
 
-    public void register(Users user) throws Exception {	
+    public void register(User user) throws Exception {	
 		DbConnection db = new DbConnection();
 		String fullName = user.getFullName();
 		String phoneNumber = user.getPhoneNumber();
@@ -227,9 +252,9 @@ public class Users {
 				stmt.close();
 				rs.close();
 				db.close();
-				throw new Exception("Sorry, username or email already registered");
+				throw new Exception("Sorry, username already registered");
 			} else {
-				String query2 = "INSERT INTO users (fullName, phoneNumber, email, username, password, location, dob)"
+				String query2 = "INSERT INTO users (fullName, phoneNumber, email, username, pswd, location, dob)"
 				    +" VALUES (?,?,?,?,?,?,?) ; ";
 				stmt = con.prepareStatement(query2);
 				stmt.setString(1, fullName);
@@ -246,7 +271,7 @@ public class Users {
 			db.close();
 			
 		} catch (Exception e) {
-			throw new Exception("Could not connect to database.");
+			throw new Exception(" 3 Could not connect to database");
 
 		} finally {
 			try {
