@@ -54,7 +54,7 @@
         <li><a class="dropdown-item" href="showMyPosts.html">Οι αγγελίες μου</a></li>
         <!--<li><hr class="dropdown-divider"></li>
         <li><a class="dropdown-item" href="index.html">Αποσύνδεση</a></li>-->
-    </ul>
+      </ul>
     </div>
       
 </nav>
