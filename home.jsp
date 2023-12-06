@@ -1,6 +1,8 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page errorPage="errorPage.jsp"%>
 <%@ page import="paradoteo2.*" %>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +17,7 @@
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" style="border-bottom: 2px solid black;">
-       <a href="home.html" >
+       <a href="home.jsp" >
         <img src="images/PetLink.png" alt="PetLink" width="100" height="70" >
        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,13 +26,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="home.html">Αρχική Σελίδα</a>
+              <a class="nav-link active" aria-current="page" href="home.jsp">Αρχική Σελίδα</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="searchForm.html">Αναζήτηση</a>
+              <a class="nav-link active" href="searchForm.jsp">Αναζήτηση</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="uploadForm.html">Ανάρτηση Αγγελίας</a>
+              <a class="nav-link active" href="uploadForm.jsp">Ανάρτηση Αγγελίας</a>
             </li>
           </ul>
         </div> 
@@ -44,8 +46,8 @@
           </svg> Username
         </a>
         <ul class="dropdown-menu text-small" style="margin-left: -25%;">
-          <li><a class="dropdown-item" href="loginForm.html">Σύνδεση/Εγγραφή</a></li>
-          <li><a class="dropdown-item" href="showMyPosts.html">Οι αγγελίες μου</a></li>
+          <li><a class="dropdown-item" href="loginForm.jsp">Σύνδεση/Εγγραφή</a></li>
+          <li><a class="dropdown-item" href="showMyPosts.jsp">Οι αγγελίες μου</a></li>
       </ul>
       </div>     
     </nav>
@@ -58,10 +60,10 @@
                 <h1>Καλώς ήρθατε στο PetLink!</h1>
                 <p>Υιοθέτησε ένα κατοικίδιο και δώσε του <br>του ένα μόνιμο σπίτι!</p>
                 <div>
-                    <a id="buttonhome1" class="btn btn-lg btn-primary btn-block" style="--bs-btn-padding-y: 0rem" href="searchForm.html"> Αναζήτηση Αγγελίας </a>
+                    <a id="buttonhome1" class="btn btn-lg btn-primary btn-block" style="--bs-btn-padding-y: 0rem" href="searchForm.jsp"> Αναζήτηση Αγγελίας </a>
                 </div>
                 <div>
-                    <a id="buttonhome2" class="btn btn-lg btn-primary btn-block" style="--bs-btn-padding-y: 0rem" href="uploadForm.html"> Ανάρτηση Αγγελίας </a>
+                    <a id="buttonhome2" class="btn btn-lg btn-primary btn-block" style="--bs-btn-padding-y: 0rem" href="uploadForm.jsp"> Ανάρτηση Αγγελίας </a>
                 </div>
             </div>
         </header>

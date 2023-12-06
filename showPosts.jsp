@@ -1,6 +1,8 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page errorPage="errorPage.jsp"%>
 <%@ page import="paradoteo2.*" %>
+
+
 <!doctype html>
 <html lang="el">
 
@@ -18,7 +20,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" style="border-bottom: 2px solid black;">
       <div class="container-fluid">
-        <a href="home.html">
+        <a href="home.jsp">
         <img src="images/PetLink.png" alt="PetLink" width="100" height="70" >
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,13 +29,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="home.html">Αρχική Σελίδα</a>
+              <a class="nav-link active" aria-current="page" href="home.jsp">Αρχική Σελίδα</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="home.html">Αναζήτηση</a>
+              <a class="nav-link active" href="home.jsp">Αναζήτηση</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="uploadForm.html">Ανάρτηση Αγγελίας</a>
+              <a class="nav-link active" href="uploadForm.jsp">Ανάρτηση Αγγελίας</a>
             </li>
           </ul>
         </div>
@@ -47,10 +49,10 @@
           </svg> Username
         </a>
         <ul class="dropdown-menu text-small" style="margin-left: -25%;">
-          <li><a class="dropdown-item" href="loginForm.html">Σύνδεση/Εγγραφή</a></li>
-          <li><a class="dropdown-item" href="showMyPosts.html">Οι αγγελίες μου</a></li>
+          <li><a class="dropdown-item" href="loginForm.jsp">Σύνδεση/Εγγραφή</a></li>
+          <li><a class="dropdown-item" href="showMyPosts.jsp">Οι αγγελίες μου</a></li>
           <!--<li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="index.html">Αποσύνδεση</a></li>-->
+          <li><a class="dropdown-item" href="index.jsp">Αποσύνδεση</a></li>-->
       </ul>
       </div>
         
@@ -88,7 +90,7 @@
       <script>
         function showMore(petId) {
             // Redirect to the pet details page for the selected pet
-            window.location.href = "showSpecificPosts.html?pet=" + petId;
+            window.location.href = "showSpecificPosts.jsp?pet=" + petId;
         }
     </script>
 

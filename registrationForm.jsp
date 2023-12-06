@@ -1,6 +1,7 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page errorPage="errorPage.jsp"%>
 <%@ page import="paradoteo2.*" %>
+
 <!doctype html>
 <html lang="el">
   <head>
@@ -37,7 +38,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   <nav class="navbar navbar-expand-lg bg-body-tertiary" style="border-bottom: 2px solid black;">
     <div class="container-fluid">
-      <a href="home.html">
+      <a href="home.jsp">
       <img src="images/PetLink.png" alt="PetLink" width="100" height="70" >
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,13 +47,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="home.html">Αρχική Σελίδα</a>
+            <a class="nav-link active" aria-current="page" href="home.jsp">Αρχική Σελίδα</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="searchForm.html">Αναζήτηση</a>
+            <a class="nav-link active" href="searchForm.jsp">Αναζήτηση</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="uploadForm.html">Ανάρτηση Αγγελίας</a>
+            <a class="nav-link active" href="uploadForm.jsp">Ανάρτηση Αγγελίας</a>
           </li>
         </ul>
       </div>
@@ -66,10 +67,10 @@
         </svg> Username
       </a>
       <ul class="dropdown-menu text-small" style="margin-left: -25%;">
-        <li><a class="dropdown-item" href="loginForm.html">Σύνδεση/Εγγραφή</a></li>
-        <li><a class="dropdown-item" href="showMyPosts.html">Οι αγγελίες μου</a></li>
+        <li><a class="dropdown-item" href="loginForm.jsp">Σύνδεση/Εγγραφή</a></li>
+        <li><a class="dropdown-item" href="showMyPosts.jsp">Οι αγγελίες μου</a></li>
         <!--<li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="index.html">Αποσύνδεση</a></li>-->
+        <li><a class="dropdown-item" href="index.jsp">Αποσύνδεση</a></li>-->
     </ul>
     </div>
       
@@ -78,7 +79,7 @@
 
   <div class="registration-box" >
     <!-- Action must be changed-->
-    <form class="form-registration" action="loginForm.html" method="GET">
+    <form class="form-registration" action="loginForm.jsp" method="GET">
         <svg xmlns="http://www.w3.org/2000/svg" style='margin-top: 20px;' width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
