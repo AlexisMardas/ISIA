@@ -1,18 +1,19 @@
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page errorPage="errorPage.jsp"%>
+<%@ page import="paradoteo2.*" %>
 <!doctype html>
 <html lang="el">
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1" >
-      <title>Σύνδεση</title>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-      <link rel="stylesheet" href="css/mystyle.css">
-      <link rel="icon" href="images/favicon.ico">
 
-      
-    
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <title>Οι αγγελίες μου</title>
+    <link rel="stylesheet" href="css/mypostsstyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="icon" href="images/favicon.ico">
+</head>
 
-  <body>
+<body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" style="border-bottom: 2px solid black;">
       <div class="container-fluid">
@@ -46,7 +47,7 @@
         </a>
         <ul class="dropdown-menu text-small" style="margin-left: -25%;">
           <li><a class="dropdown-item" href="loginForm.html">Σύνδεση/Εγγραφή</a></li>
-          <li><a class="dropdown-item" href="showMyPosts.html">Οι αγγελίες μου</a></li>
+          <li><a class="dropdown-item" href="#">Οι αγγελίες μου</a></li>
           <!--<li><hr class="dropdown-divider"></li>
           <li><a class="dropdown-item" href="index.html">Αποσύνδεση</a></li>-->
       </ul>
@@ -54,26 +55,49 @@
         
   </nav>
 
-
-    <div class="login-box" style="height: fit-content;">
-      <h2>Σύνδεση</h2>
-      <!-- Action to be changed -->
-      <form action="home.html" method="GET">
-          <div class="input-container">
-              <label for="username">Username</label>
-              <input type="text" id="username" name="username" required>
-          </div>
-          <div class="input-container">
-              <label for="password">Password</label>
-              <input type="password" id="password" name="password" required>
-          </div>
-          <button type="submit">Σύνδεση</button>
-      </form>
-      <div class="links">
-          <a class="link" href="registrationForm.html">Εγγραφή</a>
-          <a class="link" href="adminLoginForm.html">Σύνδεση διαχειριστή</a>
+  <div class="pet-grid">
+    <!-- First Pet Adoption Post -->
+    <div class="pet-post">
+      <div class="pet-image-container">
+        <img class="pet-image" src="images/cat1.jpg" alt="Pet Image">
       </div>
+      <div class="pet-details">
+        <p class="pet-name">Χερούλης</p>
+        <p class="upload-date">Ημερομηνία ανάρτησης: 29-10-2023</p>
+        <div class="buttons">
+          <a href="showApplicants.html">
+          <button class="button" id="morebutton" >Περισσότερα</button>
+        </a>
+        <a href="#">
+          <button class="button" id="deletebutton">Διαγραφή</button>
+        </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Pet Adoption Post -->
+    <div class="pet-post">
+      <div class="pet-image-container">
+        <img class="pet-image" src="images/dog1.jpg" alt="Pet Image">
+      </div>
+      <div class="pet-details">
+        <p class="pet-name">Μαξ</p>
+        <p class="upload-date">Ημερομηνία ανάρτησης: 29-10-2023</p>
+        <div class="buttons">
+          <a href="showApplicants.html">
+          <button class="button" id="morebutton" >Περισσότερα</button>
+        </a>
+        <a href="#">
+          <button class="button" id="deletebutton">Διαγραφή</button>
+        </a>
+        </div>
+      </div>
+    </div>
+
+    
   </div>
-        
+
   </body>
+
+
 </html>
