@@ -7,14 +7,18 @@ import java.sql.*;
 public class Application {
 
     public int id;
-    public String dateOfApplication;
+    public Date dateOfApplication;
     public boolean previousExperience;
     public boolean otherPets;
     public String comments;
 
     private User user;
 
-    public Application(int id, String dateOfApplication, boolean previousExperience, boolean otherPets, String comments) {
+    public Application() {
+
+    }
+
+    public Application(int id, Date dateOfApplication, boolean previousExperience, boolean otherPets, String comments) {
         this.id = id;
         this.dateOfApplication = dateOfApplication;
         this.previousExperience = previousExperience;
@@ -22,7 +26,7 @@ public class Application {
         this.comments = comments;
     }
 
-    public Application(String dateOfApplication, boolean previousExperience, boolean otherPets, String comments, User user) {
+    public Application(Date dateOfApplication, boolean previousExperience, boolean otherPets, String comments, User user) {
         this.dateOfApplication = dateOfApplication;
         this.previousExperience = previousExperience;
         this.otherPets = otherPets;
@@ -48,11 +52,11 @@ public class Application {
         this.id = id;
     }
 
-    public String getDateOfApplication() {
+    public Date getDateOfApplication() {
         return dateOfApplication;
     }
 
-    public void setDateOfApplication(String dateOfApplication) {
+    public void setDateOfApplication(Date dateOfApplication) {
         this.dateOfApplication = dateOfApplication;
     }
 
@@ -82,7 +86,7 @@ public class Application {
 
     public List<Application> showApplications(int postID) throws Exception {
 
-        List<Application> applications = new ArrayList<>();
+        List<Application> applications = new ArrayList<Application>();
 
         DbConnection db = new DbConnection();
         Connection con = null;
@@ -97,14 +101,13 @@ public class Application {
             con = db.getConnection();
 
             PreparedStatement stmt = con.prepareStatement(query);
-            stmt.setInt(1, postID);// na sundethei me tin post
+            stmt.setInt(1, postID);
             
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
-
-                while (rs.next()) {
-                    String dateOfApplication = rs.getString("application.dateOfApplication");
+                
+                    Date dateOfApplication = rs.getDate("application.dateOfApplication");
                     boolean previousExperience = rs.getBoolean("application.previousExperience");
                     boolean otherPets = rs.getBoolean("application.otherPets");
                     String comments = rs.getString("application.comments");
@@ -125,7 +128,6 @@ public class Application {
                     Application application = new Application(dateOfApplication, previousExperience, otherPets, comments, user);
         
                     applications.add(application);
-                }
 
             }
 
@@ -162,7 +164,7 @@ public class Application {
 
             // setting parameters
             smt.setInt(1, application.getId());
-            smt.setString(2, application.getDateOfApplication());
+            smt.setDate(2, application.getDateOfApplication());
             smt.setBoolean(3, application.getPreviousExperience());
             smt.setBoolean(4, application.getOtherPets());
             smt.setString(5, application.getComments());
@@ -185,11 +187,11 @@ public class Application {
 
     }
 
-    public void deleteApplication(int id) throws Exception {
+    public void deleteApplications(int postID) throws Exception {
 
         DbConnection db = new DbConnection();
         Connection con = null;
-        String sql = "DELETE FROM application where id=?;";
+        String sql = "DELETE FROM application where postID=?;";
 
         try {
             
@@ -197,7 +199,7 @@ public class Application {
             PreparedStatement smt = con.prepareStatement(sql);
 
             // setting parameters
-            smt.setInt(1, id);            
+            smt.setInt(1, postID);            
             
             smt.executeUpdate();
 

@@ -95,7 +95,7 @@ public class Post {
         } else {
             query += " AND gender = " + "\"" + gender + "\" ;";
         }
-        System.out.println(query);
+
 
         try {
             con = db.getConnection();
@@ -302,12 +302,10 @@ public class Post {
         DbConnection db = new DbConnection();
         PreparedStatement stmt = null;
         Connection con = null;
-
-        // Application app = new Application();
-        // app.deleteApplications(postID);
-
+        Application app = new Application();
         String query = "DELETE FROM post WHERE postID=? ;";
         try {
+             app.deleteApplications(postID);
             con = db.getConnection();
             stmt = con.prepareStatement(query);
             stmt.setInt(1, postID);
