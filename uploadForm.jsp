@@ -75,7 +75,7 @@
         </a>
   </div>
 </div>
-
+                     <!-- ΝΑ ΜΠΟΥΝ ΕΠΕΙΓΟΝΤΩΣ NAME ATTRIBUTES-->
 
     <div class="upload-form">
         <h2 class="form-title">Δώσε ένα ζωάκι για υιοθεσία</h2>

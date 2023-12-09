@@ -5,7 +5,7 @@ import java.sql.*;
 public class Pet {
     private int petid;
 	private int age;
-	private float weight;
+	private double weight;
 	private String location;
 	private String gender;
     private String pname;
@@ -25,7 +25,7 @@ public class Pet {
 
 
     //Constructor
-    public Pet(int petid, String animalType, int age, float weight, String location, String gender, String pname, String maincolor,
+    public Pet(int petid, String animalType, int age, double weight, String location, String gender, String pname, String maincolor,
             Blob photo, boolean fullyVaccinated, boolean chronicdesease, boolean sterilized, boolean chipped,
             String description) {
         this.petid = petid;
@@ -60,7 +60,7 @@ public class Pet {
     public void setAge(int age) {
         this.age = age;
     }
-    public float getWeight() {
+    public double getWeight() {
         return weight;
     }
     public void setWeight(float weight) {
