@@ -8,11 +8,12 @@ String password = request.getParameter("password");
 
 User user = new User();
 
+
 try {
 
-    User userCredentials = user.verifyUser(username, password);
+    user = user.verifyUser(username, password);
 
-    session.setAttribute("authenticatedUser", userCredentials);
+    session.setAttribute("authenticatedUser", user);
 
 
 %>    

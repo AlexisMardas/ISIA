@@ -9,7 +9,8 @@ if (session.getAttribute("authenticatedUser") == null) {
 
 %>
     <jsp:forward page="loginForm.jsp" />
-
 <%
+    return;
+
 }    
 %>
