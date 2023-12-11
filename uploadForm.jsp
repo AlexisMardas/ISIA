@@ -70,20 +70,20 @@
         <form>
           <div class="form-group">
             <label for="petKind">Είδος του ζώου</label>
-            <input type="text" class="form-control" id="petKind" placeholder="π.χ. γάτα, σκύλος" required>
+            <input type="text" class="form-control" id="petKind" name="petKind" placeholder="π.χ. γάτα, σκύλος" required>
         </div>
         <div class="form-group">
             <label for="petAge">Ηλικία του ζώου</label>
-            <input type="number" class="form-control" id="petAge" placeholder="Ηλικία σε χρόνια" required>
+            <input type="number" class="form-control" id="petAge" name="petAge" placeholder="Ηλικία σε χρόνια" required>
         </div>
         <div class="form-group">
             <label for="petWeight">Βάρος του ζώου</label>
-            <input type="number" class="form-control" id="petWeight" placeholder="Βάρος σε κιλά" required>
+            <input type="number" class="form-control" id="petWeight" name="petWeight" placeholder="Βάρος σε κιλά" required>
         </div>
         <div class="form-group">
           <label for="petGender">Φύλο του ζώου</label>
           <div class="gender-input">
-              <select class="form-control" id="petGender" required>
+              <select class="form-control" id="petGender" name="petGender" required>
                   <option value="Male">Αρσενικό</option>
                   <option value="Female">Θηλυκό</option>
               </select>
@@ -93,15 +93,15 @@
       
         <div class="form-group">
             <label for="petName">Όνομα του ζώου</label>
-            <input type="text" class="form-control" id="petName" placeholder="Όνομα του ζώου" required>
+            <input type="text" class="form-control" id="petName" name="petName" placeholder="Όνομα του ζώου" required>
         </div>
         <div class="form-group">
             <label for="petColor">Βασικό χρώμα του ζώου</label>
-            <input type="text" class="form-control" id="petColor" placeholder="π.χ. μαύρο, καφέ" required>
+            <input type="text" class="form-control" id="petColor" name="petColor" placeholder="π.χ. μαύρο, καφέ" required>
         </div>
         <div class="form-group">
             <label for="location">Τοποθεσία</label>
-            <input type="text" class="form-control" id="location" placeholder="Η τοποθεσία σας" required>
+            <input type="text" class="form-control" id="location" name="location" placeholder="Η τοποθεσία σας" required>
         </div>
         <div class="form-group">
             <label>Είναι το ζώο πλήρως εμβολιασμένο;</label><br>
@@ -149,11 +149,11 @@
         </div>
         <div class="form-group">
             <label for="petPhoto">Προσθέστε μία φωτογραφία του ζώου</label>
-            <input type="file" class="form-control" id="petPhoto" accept="image/*">
+            <input type="file" class="form-control" id="petPhoto" name="petPhoto" accept="image/*">
         </div>
         <div class="form-group">
             <label for="petDescription">Σύντομη περιγραφή του ζώου</label>
-            <textarea class="form-control" id="petDescription" rows="5" placeholder="Πείτε μας κάποια πράγματα για το συγκεκριμένο ζώο"></textarea>
+            <textarea class="form-control" id="petDescription" name="petDescription" rows="5" placeholder="Πείτε μας κάποια πράγματα για το συγκεκριμένο ζώο"></textarea>
         </div>
 
             <button type="submit" class="btn btn-primary">Υποβολή για έλεγχο</button>
