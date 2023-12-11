@@ -48,7 +48,7 @@
     <div class="login-box" style="height: fit-content;">
       <h2>Σύνδεση</h2>
       <!-- Action to be changed -->
-      <form method="POST" action="loginController.jsp" >
+      <form method="POST" action="LoginServlet" >
           <div class="input-container">
               <label for="username">Username</label>
               <input type="text" id="username" name="username" required>

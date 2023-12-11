@@ -5,8 +5,8 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 
-public class LoginServlet {
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
+public class LoginServlet extends HttpServlet {
+    public void doPost (HttpServletRequest request, HttpServletResponse response)
     throws IOException, ServletException {
 
         response.setContentType("text/html; charset=windows-1253");
@@ -23,7 +23,7 @@ public class LoginServlet {
             user = user.verifyUser(username, password);
             HttpSession session = request.getSession(true);
             session.setAttribute("authenticatedUser", user);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("../home.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
             dispatcher.forward(request, response);
 
                 
@@ -31,7 +31,7 @@ public class LoginServlet {
         } catch(Exception e) {
 
             request.setAttribute("error_message", e.getMessage());
-            RequestDispatcher dispatcher = request.getRequestDispatcher("../loginForm.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("loginForm.jsp");
             dispatcher.forward(request, response);
         
         }
