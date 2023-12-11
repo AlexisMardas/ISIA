@@ -151,11 +151,11 @@ public class Application {
 
     } // end of showApplications
 
-    public void submitApplication(Application application) throws Exception {
+    public void submitApplication(int postID, int userID, boolean previousExperience, boolean otherPets, String comments) throws Exception {
 
         DbConnection db = new DbConnection();
         Connection con = null;
-        String sql = "INSERT INTO application (id,dateOfApplication,previousExperience,otherPets,comments) VALUES (?,?,?,?,?);";
+        String sql = "INSERT INTO application (previousExperience,otherPets,comments) VALUES (?,?,?);";
 
         try {
             
@@ -163,15 +163,24 @@ public class Application {
             PreparedStatement smt = con.prepareStatement(sql);
 
             // setting parameters
-            smt.setInt(1, application.getId());
-            smt.setDate(2, application.getDateOfApplication());
-            smt.setBoolean(3, application.getPreviousExperience());
-            smt.setBoolean(4, application.getOtherPets());
-            smt.setString(5, application.getComments());
+            smt.setBoolean(1, previousExperience);
+            smt.setBoolean(2, otherPets);
+            smt.setString(3, comments);
+            
+            smt.executeUpdate();
+
+            
+            Date dateOfApplication = new Date(System.currentTimeMillis());
+            String sql2 = "INSERT INTO application (postID, userID, dateOfApplication) VALUES (?,?,?);";
+            smt = con.prepareStatement(sql2);
+            smt.setInt(1,postID);
+            smt.setInt(2,userID);
+            smt.setDate(3, dateOfApplication);
             
             smt.executeUpdate();
 
             smt.close();
+            
             db.close();
 
         } catch (Exception e) {
