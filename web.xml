@@ -59,6 +59,19 @@
         <servlet-name>SpecificPostServlet</servlet-name>
         <url-pattern>/SpecificPostServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SubmitApplicationServlet</servlet-name>
+        <servlet-class>
+           paradoteo2.SubmitApplicationServlet
+        </servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SubmitApplicationServlet</servlet-name>
+        <url-pattern>/SubmitApplicationServlet</url-pattern>
+    </servlet-mapping>
+  
   
 
   

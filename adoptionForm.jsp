@@ -49,35 +49,38 @@
   </nav>
 
 
-
-
+ <% User user = (User) session.getAttribute("authenticatedUser");
+    int petID = request.getParameter("petID"); %>
 <div class="adoption-form" style="margin-top: 5%;">
     <h2>Αίτηση υιοθεσίας κατοικιδίου</h2>
-    <form>
+
+    <form action="SubmitApplicationServlet" method="post"> 
+        <input type="hidden" name="petID" value="<%= petID %>">    
+
         <div class="form-group">
             <label for="fullName">Ονοματεπώνυμο </label>
-            <input type="text" class="form-control" id="fullName" placeholder="Εισάγετε το ονοματεπώνυμο σας" required>
+            <input type="text" defaultValue="<%= user.getFullName() %>" class="form-control" id="fullName" name="fullName" placeholder="Εισάγετε το ονοματεπώνυμο σας" required >
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Εισάγετε το email σας" required>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Εισάγετε το email σας" required>
         </div>
         <div class="form-group">
             <label for="phone">Τηλέφωνο</label>
-            <input type="tel" class="form-control" id="phone" placeholder="Εισάγετε ένα τηλέφωνο επικοινωνίας" required>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Εισάγετε ένα τηλέφωνο επικοινωνίας" required>
         </div>
         <div class="form-group">
             <label for="location">Τοποθεσία</label>
-            <input type="text" class="form-control" id="location" placeholder="Εισάγετε την τοποθεσία σας" required>
+            <input type="text" class="form-control" id="location" name="location" placeholder="Εισάγετε την τοποθεσία σας" required>
         </div>
         <div class="form-group">
             <label>Έχετε άλλα κατοικίδια;</label><br>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="haveOtherPets" id="yesPets" value="yes">
+                <input class="form-check-input" type="radio" name="otherPets" id="yesPets" value="yes">
                 <label class="form-check-label" for="yesPets">Ναι</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="haveOtherPets" id="noPets" value="no">
+                <input class="form-check-input" type="radio" name="otherPets" id="noPets" value="no">
                 <label class="form-check-label" for="noPets">Όχι</label>
             </div>
         </div>
@@ -94,10 +97,18 @@
         </div>
         <div class="form-group">
             <label for="comments">Σχόλια</label>
-            <textarea class="form-control" id="comments" rows="4"></textarea>
+            <textarea class="form-control" id="comments"name="comments" rows="4"></textarea>
         </div>
+
         <button type="submit" class="btn btn-primary">Υποβολή </button>
+
     </form>
+
+   
+
+
 </div>
+
+
 </body>
 </html>

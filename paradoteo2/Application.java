@@ -151,11 +151,11 @@ public class Application {
 
     } // end of showApplications
 
-    public void submitApplication(int postID, int userID, boolean previousExperience, boolean otherPets, String comments) throws Exception {
+    public void submitApplication(int petID, int userID, boolean previousExperience, boolean otherPets, String comments) throws Exception {
 
         DbConnection db = new DbConnection();
         Connection con = null;
-        String sql = "INSERT INTO application (previousExperience,otherPets,comments) VALUES (?,?,?);";
+        String sql = "SELECT postID FROM post WHERE petID=?";
 
         try {
             
@@ -163,19 +163,21 @@ public class Application {
             PreparedStatement smt = con.prepareStatement(sql);
 
             // setting parameters
-            smt.setBoolean(1, previousExperience);
-            smt.setBoolean(2, otherPets);
-            smt.setString(3, comments);
-            
-            smt.executeUpdate();
-
-            
+            smt.setInt(1, petID);
+            ResultSet rs = smt.executeQuery();
+            rs.next();
+            int postID = rs.getInt("postID");
+    
             Date dateOfApplication = new Date(System.currentTimeMillis());
-            String sql2 = "INSERT INTO application (postID, userID, dateOfApplication) VALUES (?,?,?);";
+            String sql2 = "INSERT INTO application (postID, userID, dateOfApplication,previousExperience,otherPets,comments) VALUES (?,?,?,?,?,?);";
             smt = con.prepareStatement(sql2);
             smt.setInt(1,postID);
             smt.setInt(2,userID);
             smt.setDate(3, dateOfApplication);
+             smt.setBoolean(4, previousExperience);
+            smt.setBoolean(5, otherPets);
+            smt.setString(6, comments);
+            
             
             smt.executeUpdate();
 
