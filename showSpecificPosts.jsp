@@ -44,25 +44,25 @@
       <%@ include file="navbar.jsp" %>
         
   </nav>
+  <% Pet pet = (Pet) request.getAttribute("pet"); %>
 
     <div class="pet-details">
         <div class="post">
             <img src="images/pet1.jpg" alt="Pet 1">
             <div class="post-info">
                 
-                <h2>Rudy</h2>
-                <p><i class="fas fa-paw"></i> Είδος: Σκύλος</p>
-                <p><i class="fas fa-venus-mars"></i> Φύλο: Αρσενικό</p>
-                <p><i class="fas fa-birthday-cake"></i> Ηλικία: 7 μηνών</p> 
-                <p><i class="fas fa-weight"></i> Βάρος: 12 κιλά</p> 
-                <p><i class="fas fa-map-marker-alt"></i> Πειραιάς, Αθήνα</p> 
-                <p><i class="fas fa-check"></i> Πλήρως Εμβολιασμένο</p>
-                <p><i class="fas fa-medkit"></i> Καμία χρόνια ασθένεια</p>
-                <p><i class="fas fa-cut"></i> Στειρωμένο</p>
-                <p><i class="fas fa-microchip"></i> Τσιπαρισμένο</p>
-                <p>Ο Rudy είναι πολύ παιχνιδιάρης και τρυφερός.
-                    Είναι πολύ κοινωνικός τόσο με τους ανθρώπους όσο και με τα άλλα σκυλιά.
-                    
+                <h2><%= pet.getPname() %></h2>
+                <p><i class="fas fa-paw"></i> Είδος: <%= pet.getAnimalType() %></p>
+                <p><i class="fas fa-venus-mars"></i> Φύλο: <%= pet.getGender() %></p>
+                <p><i class="fas fa-birthday-cake"></i> Ηλικία: <%= Integer.toString(pet.getAge()) %> years old</p> 
+                <p><i class="fas fa-weight"></i> Βάρος: <%= Double.toString(pet.getWeight()) %></p>
+                <p><i class="fas fa-solid fa-palette"> </i> <%= pet.getMaincolor() %> </p> 
+                <p><i class="fas fa-map-marker-alt"></i> <%= pet.getLocation() %></p> 
+                <p><i class="fas fa-check"></i> <%= pet.isFullyVaccinated()? "Fully Vaccinated" : "Not Vaccinated" %></p>
+                <p><i class="fas fa-medkit"></i> <%= pet.isChronicdesease()? "Has a chronic desease" : "No chronic desease" %></p>
+                <p><i class="fas fa-cut"></i> <%= pet.isSterilized()? "Sterilized" : "Not sterilized" %></p>
+                <p><i class="fas fa-microchip"></i> <%= pet.isChipped()? "Chipped" : "Not chipped" %></p>
+                <p><%=pet.getDescription() %>
                 </p>
                 <a href="adoptionForm.jsp">
                   <button>Ενδιαφέρομαι για Υιοθεσία</button>

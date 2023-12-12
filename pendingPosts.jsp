@@ -49,7 +49,7 @@
           </svg> Διαχειριστής
         </a>
         <ul class="dropdown-menu text-small" style="margin-left: -25%;">
-          <li><a class="dropdown-item" href="loginForm.jsp">Αποσύνδεση</a></li>
+          <li><a class="dropdown-item" href="LogoutServlet">Αποσύνδεση</a></li>
           
       </ul>
       </div>

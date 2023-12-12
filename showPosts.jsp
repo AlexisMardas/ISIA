@@ -1,7 +1,7 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page errorPage="errorPage.jsp"%>
 <%@ page import="paradoteo2.*" %>
-<%@ include file="authenticationGuard.jsp" %>
+
 
 
 <!doctype html>
@@ -53,7 +53,7 @@
               <div class="post-info">
                   <h2>Rudy</h2>
                   <p><i class="fas fa-map-marker-alt"></i> Πειραιάς, Αθήνα</p> <!-- Location icon -->
-                  <button onclick="showMore('pet1')">Περισσότερα</button>
+                  <button onclick="showMore('10')">Περισσότερα</button>
               </div>
           </div>
           <div class="post">
@@ -61,7 +61,7 @@
               <div class="post-info">
                   <h2>Mary</h2>
                   <p><i class="fas fa-map-marker-alt"></i> Καλλιθέα, Αθήνα</p> <!-- Location icon -->
-                  <button onclick="showMore('pet2')">Περισσότερα</button>
+                  <button onclick="showMore('11')">Περισσότερα</button>
               </div>
           </div>
           
@@ -70,7 +70,7 @@
             <div class="post-info">
                 <h2>Buddy</h2>
                 <p><i class="fas fa-map-marker-alt"></i> Ζωγράφου, Αθήνα</p> <!-- Location icon -->
-                <button onclick="showMore('pet3')">Περισσότερα</button>
+                <button onclick="showMore('12')">Περισσότερα</button>
             </div>
         </div>
       </div>
@@ -78,7 +78,7 @@
       <script>
         function showMore(petId) {
             // Redirect to the pet details page for the selected pet
-            window.location.href = "showSpecificPosts.jsp?pet=" + petId;
+            window.location.href = "SpecificPostServlet?petID=" + petId;
         }
     </script>
 
