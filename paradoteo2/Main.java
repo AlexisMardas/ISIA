@@ -7,7 +7,7 @@ public class Main {
         // Testing class Post
         Post p = new Post();
         try {
-            List<Object[]> pets = p.searchPosts("", "", "","Chania", "");
+            List<Object[]> pets = p.searchPosts("dog", "5", "40","Zografos", "M");
             System.out.println(Integer.toString(pets.size()));
             for (Object[] pet : pets) {
                 System.out.println((String) pet[1] + ":" + (String) pet[2]);

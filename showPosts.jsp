@@ -46,9 +46,10 @@
       <%@ include file="navbar.jsp" %>
         
   </nav>
+  <div class="pet-posts">
   <% List<Object[]> posts = (List<Object[]>) request.getAttribute("posts"); 
     for (Object[] post : posts) { %>
-      <div class="pet-posts">
+      
         <div class="post">
             <img src="images/pet1.jpg" alt="Pet 1">
             <div class="post-info">
@@ -59,6 +60,7 @@
         </div>
          
       <% } %>
+    </div>
 
       <!-- Useless crap
        <div class="post">

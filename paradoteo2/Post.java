@@ -4,18 +4,15 @@ import java.util.List;
 import java.util.ArrayList;
 
 
+
 public class Post {
     private String status;
     private int id;
     private Date dateOfPost;
     private Pet pet;
     private int userId;
-
     public Post() {
-
     }
-
-
     public Post(String status, int id, Date dateOfPost, Pet pet, int userId) {
         this.status = status;
         this.id = id;
@@ -23,83 +20,77 @@ public class Post {
         this.pet = pet;
         this.userId = userId;
     }
-
-
     public String getStatus() {
         return status;
     }
-
-
     public int getUserId() {
         return userId;
     }
-
     public int getId() {
         return id;
     }
-
-
     public Date getDateOfPost() {
         return dateOfPost;
     }
-
     
     public Pet getPet() {
         return pet;
     }
-
     public List<Object[]> searchPosts(String animal, String age, String weight, String location, String gender) throws Exception {
         List<Object[]> pets = new ArrayList<Object[]>();
         DbConnection db = new DbConnection();
         Connection con = null;
-        // Statement will be used to retain the needed flexibility.
         Statement stmt = null;
         String query = "SELECT pet.petID, pname, location, photo FROM pet, post WHERE pet.petID = post.petID AND post.pstatus = \"accepted\" ";
         // Ensure the integrity of the parameters
-        if (animal == "") {
+
+        if (animal.equals("") ) {
             query += " AND animalType = animaltype";
         } else {
             query += " AND animalType = " + "\"" + animal + "\"";
         }
 
-        if (age == "") {
+
+        if (age.equals("") ) {
             query += " AND age = age"; 
-        } else if (age == "2") {
+        } else if (age.equals("2")) {
             query += " AND age <= 2 ";
-        } else if (age == "5") {
+        } else if (age.equals("5")) {
             query += " AND age > 2 AND age <= 5 ";
-        } else if (age == "10") {
+        } else if (age.equals("10")) {
             query += " AND age > 5 AND age <=  10 ";
         } else {
              query += " AND age > 10 ";
         }
 
-        if (weight == "") {
+
+        if (weight.equals("")) {
             query += " AND weight = weight ";
-        } else if (weight == "5") {
+        } else if (weight.equals("5")) {
             query += " AND weight <= 5 ";
-        } else if (weight == "10") {
+        } else if (weight.equals("10")) {
             query += " AND weight > 5  AND weight <= 10 ";
-        } else if (weight == "20") {
+        } else if (weight.equals("20")) {
             query += " AND weight > 10 AND weight <= 20 ";
-        } else if (weight == "40") {
+        } else if (weight.equals("40")) {
             query += " AND weight > 20 AND weight <= 40 ";
         } else {
             query += " AND weight > 40 ";
         }
 
-        if (location == "") {
-            query += " AND location = location";
+        if (location.equals("")) {
+            query += " AND location = location ";
         } else {
-            query += " AND location = " + "\"" + location + "\" ;";
-        };
+            query += " AND location = " + "\"" + location + "\" ";
 
-        if (gender == "") {
+        }
+
+        if (gender.equals("")) {
             query += " AND gender = gender ;";
         } else {
             query += " AND gender = " + "\"" + gender + "\" ;";
-        }
 
+        }
 
         try {
             con = db.getConnection();
@@ -126,11 +117,9 @@ public class Post {
             } catch (Exception e) {
                
             }
-
-
         }
-
     }
+   
 
 
     public Pet findpet (int id) throws Exception {
@@ -308,7 +297,7 @@ public class Post {
         Application app = new Application();
         String query = "DELETE FROM post WHERE postID=? ;";
         try {
-             app.deleteApplications(postID);
+            app.deleteApplications(postID);
             con = db.getConnection();
             stmt = con.prepareStatement(query);
             stmt.setInt(1, postID);
