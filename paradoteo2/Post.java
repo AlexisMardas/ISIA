@@ -52,7 +52,8 @@ public class Post {
         List<Object[]> pets = new ArrayList<Object[]>();
         DbConnection db = new DbConnection();
         Connection con = null;
-        PreparedStatement stmt = null;
+        // Statement will be used to retain the needed flexibility.
+        Statement stmt = null;
         String query = "SELECT pet.petID, pname, location, photo FROM pet, post WHERE pet.petID = post.petID AND post.pstatus = \"accepted\" ";
         // Ensure the integrity of the parameters
         if (animal == "") {
@@ -87,7 +88,11 @@ public class Post {
             query += " AND weight > 40 ";
         }
 
-        query += " AND location = ? ";
+        if (location == "") {
+            query += " AND location = location";
+        } else {
+            query += " AND location = " + "\"" + location + "\" ;";
+        };
 
         if (gender == "") {
             query += " AND gender = gender ;";
@@ -98,9 +103,8 @@ public class Post {
 
         try {
             con = db.getConnection();
-            stmt = con.prepareStatement(query);
-            stmt.setString(1, location);
-            ResultSet rs = stmt.executeQuery();
+            stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
                 Object [] array = new Object[4];
                 array[0] = rs.getInt("petId");

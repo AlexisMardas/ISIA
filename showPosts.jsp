@@ -1,6 +1,7 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page errorPage="errorPage.jsp"%>
 <%@ page import="paradoteo2.*" %>
+<%@ page import="java.util.List" %>
 
 
 
@@ -45,35 +46,41 @@
       <%@ include file="navbar.jsp" %>
         
   </nav>
-
-
+  <% List<Object[]> posts = (List<Object[]>) request.getAttribute("posts"); 
+    for (Object[] post : posts) { %>
       <div class="pet-posts">
-          <div class="post">
-              <img src="images/pet1.jpg" alt="Pet 1">
-              <div class="post-info">
-                  <h2>Rudy</h2>
-                  <p><i class="fas fa-map-marker-alt"></i> Πειραιάς, Αθήνα</p> <!-- Location icon -->
-                  <button onclick="showMore('10')">Περισσότερα</button>
-              </div>
-          </div>
-          <div class="post">
+        <div class="post">
+            <img src="images/pet1.jpg" alt="Pet 1">
+            <div class="post-info">
+                <h2><%=(String) post[1] %></h2>
+                <p><i class="fas fa-map-marker-alt"></i> <%=(String) post[2] %> </p> <!-- Location icon -->
+                <button onclick="showMore('<%=post[0] %>')">Περισσότερα</button>
+            </div>
+        </div>
+         
+      <% } %>
+
+      <!-- Useless crap
+       <div class="post">
               <img src="images/pet2.jpg" alt="Pet 2">
               <div class="post-info">
                   <h2>Mary</h2>
-                  <p><i class="fas fa-map-marker-alt"></i> Καλλιθέα, Αθήνα</p> <!-- Location icon -->
+                  <p><i class="fas fa-map-marker-alt"></i> Καλλιθέα, Αθήνα</p> 
                   <button onclick="showMore('11')">Περισσότερα</button>
               </div>
           </div>
+         
           
           <div class="post">
             <img src="images/pet3.jpg" alt="Pet 3">
             <div class="post-info">
                 <h2>Buddy</h2>
-                <p><i class="fas fa-map-marker-alt"></i> Ζωγράφου, Αθήνα</p> <!-- Location icon -->
+                <p><i class="fas fa-map-marker-alt"></i> Ζωγράφου, Αθήνα</p> 
                 <button onclick="showMore('12')">Περισσότερα</button>
             </div>
         </div>
       </div>
+      -->
 
       <script>
         function showMore(petId) {

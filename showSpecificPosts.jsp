@@ -64,7 +64,7 @@
                 <p><i class="fas fa-microchip"></i> <%= pet.isChipped()? "Chipped" : "Not chipped" %></p>
                 <p><%=pet.getDescription() %>
                 </p>
-                <a href="adoptionForm.jsp?petID= <%= pet.getPetID() %>">
+                <a href="adoptionForm.jsp?petID=<%=pet.getPetid() %>">
                   <button>Ενδιαφέρομαι για Υιοθεσία</button>
                 </a>
             </div>

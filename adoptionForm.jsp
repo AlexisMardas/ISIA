@@ -50,28 +50,28 @@
 
 
  <% User user = (User) session.getAttribute("authenticatedUser");
-    int petID = request.getParameter("petID"); %>
+    String petID = request.getParameter("petID"); %>
 <div class="adoption-form" style="margin-top: 5%;">
     <h2>Αίτηση υιοθεσίας κατοικιδίου</h2>
 
     <form action="SubmitApplicationServlet" method="post"> 
-        <input type="hidden" name="petID" value="<%= petID %>">    
+        <input type="hidden" name="petID" value="<%=petID %>">    
 
         <div class="form-group">
             <label for="fullName">Ονοματεπώνυμο </label>
-            <input type="text" defaultValue="<%= user.getFullName() %>" class="form-control" id="fullName" name="fullName" placeholder="Εισάγετε το ονοματεπώνυμο σας" required >
+            <input type="text"  class="form-control" id="fullName" name="fullName" placeholder="Εισάγετε το ονοματεπώνυμο σας" value="<%=user.getFullName() %>" readonly >
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Εισάγετε το email σας" required>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Εισάγετε το email σας" value="<%=user.getEmail() %>" readonly>
         </div>
         <div class="form-group">
             <label for="phone">Τηλέφωνο</label>
-            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Εισάγετε ένα τηλέφωνο επικοινωνίας" required>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Εισάγετε ένα τηλέφωνο επικοινωνίας" value="<%=user.getPhoneNumber() %>" readonly>
         </div>
         <div class="form-group">
             <label for="location">Τοποθεσία</label>
-            <input type="text" class="form-control" id="location" name="location" placeholder="Εισάγετε την τοποθεσία σας" required>
+            <input type="text" class="form-control" id="location" name="location" placeholder="Εισάγετε την τοποθεσία σας" value="<%=user.getLocation() %>" readonly>
         </div>
         <div class="form-group">
             <label>Έχετε άλλα κατοικίδια;</label><br>

@@ -47,7 +47,7 @@
   <div class="search-form">
     <h2>Αναζήτηση Κατοικιδίων</h2>
     <!-- Action to be changed -->
-    <form action="showPosts.jsp" method="GET">
+    <form action="SearchPostServlet" method="POST">
         <label for="animal">Είδος:</label>
         <select id="animal" name="animal">
             <option value="">Όλα</option>
@@ -61,7 +61,7 @@
             <option value="">Όλες</option>
             <option value="2">Μέχρι	2 ετών</option>
             <option value="5">2-5 ετών</option>
-            <option value="10">5-10 ετών</option>
+            <option value="10">6-10 ετών</option>
             <option value="10+">Πάνω από 10 ετών</option>
         </select>
 
@@ -70,8 +70,8 @@
             <option value="">Όλα</option>
             <option value="5">Μέχρι και 5 kg</option>
             <option value="10">5-10 kg</option>
-            <option value="20">10-20 kg</option>
-            <option value="40">20-40 kg</option>
+            <option value="20">11-20 kg</option>
+            <option value="40">21-40 kg</option>
             <option value="40+">Πάνω από 40 kg</option>
         </select>
 

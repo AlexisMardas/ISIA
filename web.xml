@@ -71,22 +71,18 @@
         <servlet-name>SubmitApplicationServlet</servlet-name>
         <url-pattern>/SubmitApplicationServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SearchPostServlet</servlet-name>
+        <servlet-class>
+           paradoteo2.SearchPostServlet
+        </servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SearchPostServlet</servlet-name>
+        <url-pattern>/SearchPostServlet</url-pattern>
+    </servlet-mapping>
   
-  
-
-  
-
-   
-
-
-  
-
-  
-
-
-
-
-  
-
   
 </web-app>
