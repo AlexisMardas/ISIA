@@ -1,6 +1,6 @@
 package paradoteo2;
 import java.sql.*;
-// Changed image to Blob for compatibility with database ???
+
 
 public class Pet {
     private int petid;
@@ -10,7 +10,7 @@ public class Pet {
 	private String gender;
     private String pname;
 	private String maincolor;
-	private Blob  photo;
+	private String  photo;
 	private boolean fullyVaccinated;
 	private boolean chronicdesease;
     private boolean sterilized;
@@ -26,7 +26,7 @@ public class Pet {
 
     //Constructor
     public Pet(int petid, String animalType, int age, double weight, String location, String gender, String pname, String maincolor,
-            Blob photo, boolean fullyVaccinated, boolean chronicdesease, boolean sterilized, boolean chipped,
+            String photo, boolean fullyVaccinated, boolean chronicdesease, boolean sterilized, boolean chipped,
             String description) {
         this.petid = petid;
         this.age = age;
@@ -100,10 +100,10 @@ public class Pet {
     public void setMaincolor(String maincolor) {
         this.maincolor = maincolor;
     }
-    public Blob getPhoto() {
+    public String getPhoto() {
         return photo;
     }
-    public void setPhoto(Blob photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
     public boolean isFullyVaccinated() {

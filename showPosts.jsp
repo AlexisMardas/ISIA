@@ -51,7 +51,7 @@
     for (Object[] post : posts) { %>
       
         <div class="post">
-            <img src="images/pet1.jpg" alt="Pet 1">
+            <img src="images/<%=(String) post[3] %>" alt="Pet 1">
             <div class="post-info">
                 <h2><%=(String) post[1] %></h2>
                 <p><i class="fas fa-map-marker-alt"></i> <%=(String) post[2] %> </p> <!-- Location icon -->
@@ -90,6 +90,8 @@
             window.location.href = "SpecificPostServlet?petID=" + petId;
         }
     </script>
+
+<%@ include file="footer.jsp" %>
 
   </body>
   </html>

@@ -12,8 +12,6 @@ body {
     background-image: url("../images/bgimg.webp");
     background-size: cover;
     background-repeat: repeat;
-    background-attachment: scroll;
-    margin-bottom: 60px; /* footer height */
 }
 
 .adoption-form {
@@ -32,3 +30,8 @@ body {
 a:hover {
     text-decoration: underline;
   }
+
+
+html {
+    overflow: hidden;
+}

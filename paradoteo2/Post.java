@@ -101,7 +101,7 @@ public class Post {
                 array[0] = rs.getInt("petId");
                 array[1] = rs.getString("pname");
                 array[2] = rs.getString("location");
-                array[3] = rs.getBlob("photo");
+                array[3] = rs.getString("photo");
                 pets.add(array);
                 
             }
@@ -141,7 +141,7 @@ public class Post {
                 String gender = rs.getString("gender");
                 String pname = rs.getString("pname");
                 String mainColor = rs.getString("mainColor");
-                Blob photo = rs.getBlob("photo");
+                String photo = rs.getString("photo");
                 boolean fullyVaccinated = rs.getBoolean("fullyVaccinated");
                 boolean chronicDesease = rs.getBoolean("chronicDesease");
                 boolean sterilized = rs.getBoolean("sterilized");
@@ -196,7 +196,7 @@ public class Post {
                 String gender = rs.getString("gender");
                 String pname = rs.getString("pname");
                 String mainColor = rs.getString("mainColor");
-                Blob photo = rs.getBlob("photo");
+                String photo = rs.getString("photo");
                 boolean fullyVaccinated = rs.getBoolean("fullyVaccinated");
                 boolean chronicDesease = rs.getBoolean("chronicDesease");
                 boolean sterilized = rs.getBoolean("sterilized");
@@ -269,7 +269,7 @@ public class Post {
                 info[0] = rs.getInt("postID");
                 info[1] = rs.getDate("dateOfPost"); 
                 info[2] = rs.getString("pname");
-                info[3] = rs.getBlob("photo");
+                info[3] = rs.getString("photo");
                 myposts.add(info);
             }
             stmt.close();
@@ -320,7 +320,7 @@ public class Post {
 
     public void createPost (int userID, String animalType, int age, double weight, String gender, String pname,
         String mainColor, String location, boolean fullyVaccinated, boolean chronicDesease, boolean chipped, boolean sterilized, 
-        Blob photo, String description )  {
+        String photo, String description )  {
 
         DbConnection db = new DbConnection();
         PreparedStatement stmt = null;
@@ -340,7 +340,7 @@ public class Post {
             stmt.setBoolean(8,chronicDesease);
             stmt.setBoolean(9,chipped);
             stmt.setBoolean(10,sterilized);
-            stmt.setBlob(11, photo);
+            stmt.setString(11, photo);
             stmt.setString(12, description);
             stmt.setString(13, animalType);
             stmt.executeUpdate();

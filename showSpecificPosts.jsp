@@ -48,7 +48,7 @@
 
     <div class="pet-details">
         <div class="post">
-            <img src="images/pet1.jpg" alt="Pet 1">
+            <img src="images/<%=pet.getPhoto()%>" alt="Pet 1">
             <div class="post-info">
                 
                 <h2><%= pet.getPname() %></h2>
