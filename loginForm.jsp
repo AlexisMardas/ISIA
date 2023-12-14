@@ -43,15 +43,20 @@
       <%@ include file="navbar.jsp" %>
         
   </nav>
+  <% // Get the referrer, so that after the login the user will be rediected to the correct page 
+      String referrer = request.getHeader("referer");
+      // Keep only the last part of the url
+      referrer = referrer.substring(referrer.lastIndexOf("/") + 1); %>
 
 
     <div class="login-box" style="height: fit-content;">
       <h2>Σύνδεση</h2>
       <!-- Action to be changed -->
       <form method="POST" action="LoginServlet" >
+          <input type="hidden" name="referrer" value="<%=referrer %>">
           <div class="input-container">
               <label for="username">Username</label>
-              <input type="text" id="username" name="username" required>
+              <input type="text" id="username" name="username" required >
           </div>
           <div class="input-container">
               <label for="password">Password</label>

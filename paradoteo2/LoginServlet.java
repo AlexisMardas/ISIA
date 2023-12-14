@@ -11,16 +11,15 @@ public class LoginServlet extends HttpServlet {
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-
+        String referrer = request.getParameter("referrer");
         User user = new User();
-
 
         try {
 
             user = user.verifyUser(username, password);
             HttpSession session = request.getSession(true);
             session.setAttribute("authenticatedUser", user);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher(referrer);
             dispatcher.forward(request, response);
 
                 
