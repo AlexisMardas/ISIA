@@ -79,7 +79,7 @@
 
   <div class="registration-box" >
     <!-- Action must be changed-->
-    <form class="form-registration" action="loginForm.jsp" method="GET">
+    <form class="form-registration" action="RegisterUserServlet" method="POST">
         <svg xmlns="http://www.w3.org/2000/svg" style='margin-top: 20px;' width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
@@ -89,19 +89,19 @@
       
       <h1 class="h3 mb-3 font-weight-normal">Εγγραφή Χρήστη</h1>
       <label for="inputName" class="sr-only">Ονοματεπώνυμο</label>
-      <input type="text" id="inputName" class="form-control large-input" placeholder="Ονοματεπώνυμο" required>
+      <input type="text" id="inputName" name="fullname" class="form-control large-input" placeholder="Ονοματεπώνυμο" required>
       <label for="inputMail" class="sr-only">Email</label>
-      <input type="text" id="inputMail" class="form-control large-input " placeholder="Email" required>
+      <input type="text" id="inputMail" name="email" class="form-control large-input " placeholder="Email" required>
       <label for="inputPhone" class="sr-only">Τηλέφωνο</label>
-      <input type="number" id="inputPhone" class="form-control large-input" placeholder="Τηλέφωνο" required>
+      <input type="number" id="inputPhone" name="phonenumber" class="form-control large-input" placeholder="Τηλέφωνο" required>
       <label for="inputLocation" class="sr-only">Τοποθεσία</label>
-      <input type="text" id="inputLocation" class="form-control large-input" placeholder="Τοποθεσία" required>
+      <input type="text" id="inputLocation" name="location" class="form-control large-input" placeholder="Τοποθεσία" required>
       <label for="inputBirthday" class="sr-only">Ημερομηνία γέννησης</label>
-      <input type="date" id="inputBirthday" class="form-control large-input"  placeholder="Ημερομηνία γέννησης" required>
+      <input type="date" id="inputBirthday" name="dob" class="form-control large-input"  placeholder="Ημερομηνία γέννησης" required>
       <label for="newUsername" class="sr-only">Username</label>
-      <input type="text" id="newUsername" class="form-control large-input" placeholder="Όρισε Username" required autofocus>
+      <input type="text" id="newUsername" name="username" class="form-control large-input" placeholder="Όρισε Username" required autofocus>
       <label for="newPassword" class="sr-only">Password</label>
-      <input type="password" id="newPassword" class="form-control large-input" placeholder="Όρισε Password" required>
+      <input type="password" id="newPassword" name="password" class="form-control large-input" placeholder="Όρισε Password" required>
       
       <div class="checkbox mb-3">
       </div>

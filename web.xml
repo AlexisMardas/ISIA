@@ -83,6 +83,20 @@
         <servlet-name>SearchPostServlet</servlet-name>
         <url-pattern>/SearchPostServlet</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>RegisterUserServlet</servlet-name>
+        <servlet-class>
+           paradoteo2.RegisterUserServlet
+        </servlet-class>
+    </servlet>
+
+     <servlet-mapping>
+        <servlet-name>RegisterUserServlet</servlet-name>
+        <url-pattern>/RegisterUserServlet</url-pattern>
+    </servlet-mapping>
+
   
   
 </web-app>

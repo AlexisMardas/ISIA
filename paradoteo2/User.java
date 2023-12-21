@@ -160,7 +160,7 @@ public class User {
 			return user;
 			
 		} catch (Exception e) {
-			throw new Exception(" 1 Could not connect to database. ");
+			throw new Exception("Could not connect to database. ");
 
 		} finally {
 			try {
@@ -213,7 +213,7 @@ public class User {
 			return user;
 			
 		} catch (Exception e) {
-			throw new Exception("2 Could not connect to database.");
+			throw new Exception("Could not connect to database.");
 
 		} finally {
 			try {
@@ -271,7 +271,7 @@ public class User {
 			db.close();
 			
 		} catch (Exception e) {
-			throw new Exception(" 3 Could not connect to database");
+			throw new Exception("Could not connect to database");
 
 		} finally {
 			try {
