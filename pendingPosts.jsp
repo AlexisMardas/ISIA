@@ -1,6 +1,9 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page errorPage="errorPage.jsp"%>
 <%@ page import="paradoteo2.*" %>
+<%@ page import="java.util.List" %>
+
+
 
 
 <!doctype html>
@@ -20,63 +23,100 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" style="border-bottom: 2px solid black;">
       <div class="container-fluid">
-        <a href="home.jsp">
         <img src="images/PetLink.png" alt="PetLink" width="100" height="70" >
-        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="home.jsp">Αρχική Σελίδα</a>
+              <a class="nav-link active" aria-current="page" >Αρχική Σελίδα</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="searchForm.jsp">Αναζήτηση</a>
+              <a class="nav-link active" >Αναζήτηση</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="uploadForm.jsp">Ανάρτηση Αγγελίας</a>
+              <a class="nav-link active" >Ανάρτηση Αγγελίας</a>
             </li>
           </ul>
         </div>
       </div>
-  
-      <div id="user" class="dropdown text-end">
-        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-          </svg> Διαχειριστής
-        </a>
-        <ul class="dropdown-menu text-small" style="margin-left: -25%;">
-          <li><a class="dropdown-item" href="LogoutServlet">Αποσύνδεση</a></li>
-          
-      </ul>
-      </div>
+      <%
+      User user = (User) session.getAttribute("authenticatedUser");
+      %>
+      
+        <div id="user" class="dropdown text-end" style="margin-right: 2%;">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg><%= user.getUsername()%>
+          </a>
+          <ul class="dropdown-menu text-small" style="margin-left: -25%;">
+            <li><a class="dropdown-item" class="active">Αγγελίες για έλεγχο</a></li>
+            <li><a class="dropdown-item" href="LogoutServlet">Αποσύνδεση</a></li>
+        </ul>
+        </div>     
         
   </nav>
 
     <div class="pet-details">
         <div class="post">
-            <img src="images/pet1.jpg" alt="Pet 1">
-            <div class="post-info">
+            <% List<Pet> pendingPosts = (List<Pet>) request.getAttribute("pendings"); 
+            for (Pet pet : pendingPosts) { %>
+            <img src="images/<%=pet.getPhoto()%>" alt="Pet 1">
+              <div class="post-info">
                 
-                <h2>Rudy</h2>
-                <p><i class="fas fa-paw"></i> Είδος: Σκύλος</p>
-                <p><i class="fas fa-venus-mars"></i> Φύλο: Αρσενικό</p>
-                <p><i class="fas fa-birthday-cake"></i> Ηλικία: 7 μηνών</p> 
-                <p><i class="fas fa-weight"></i> Βάρος: 12 κιλά</p> 
-                <p><i class="fas fa-map-marker-alt"></i> Πειραιάς, Αθήνα</p> <!-- Location icon -->
-                <p><i class="fas fa-check"></i> Πλήρως Εμβολιασμένο</p>
-                <p><i class="fas fa-medkit"></i> Καμία χρόνια ασθένεια</p>
-                <p><i class="fas fa-cut"></i> Στειρωμένο</p>
-                <p><i class="fas fa-microchip"></i> Τσιπαρισμένο</p>
-                <p>Ο Rudy είναι πολύ παιχνιδιάρης και τρυφερός.
-                    Είναι πολύ κοινωνικός τόσο με τους ανθρώπους όσο και με τα άλλα σκυλιά.
+                <h2><%=pet.getPname()%></h2>
+                <p><i class="fas fa-paw"></i> Είδος: <%=pet.getAnimalType()%></p>
+                <p><i class="fas fa-venus-mars"></i> Φύλο: <%=pet.getGender()%></p>
+                <p><i class="fas fa-birthday-cake"></i> Ηλικία: <%=pet.getAge()%></p> 
+                <p><i class="fas fa-weight"></i> Βάρος: <%=pet.getWeight()%></p> 
+                <p><i class="fas fa-map-marker-alt"></i> <%=pet.getLocation()%></p> 
+                <%
+                String vaccinated = ""; 
+                if (pet.isFullyVaccinated() == true){
+                  vaccinated = " Πλήρως Εμβολιασμένο";
+                } else {
+                  vaccinated = " Μη Εμβολιασμένο";
+                }
+                %>
+                <p><i class="fas fa-check"></i> <%=vaccinated%></p>
+                <%
+                String desease = ""; 
+                if (pet.isChronicdesease() == true){
+                  desease = "Έχει χρόνιες ασθένειες";
+                } else {
+                  desease = " Καμία χρόνια ασθένεια";
+                }
+                %>
+                <p><i class="fas fa-medkit"></i> <%=desease%></p>
+                <%
+                String chipped = ""; 
+                if (pet.isChipped() == true){
+                  chipped = "Τσιπαρισμένο";
+                } else {
+                  chipped = "Όχι Τσιπαρισμένο";
+                }
+                %>
+                <p><i class="fas fa-microchip"></i> <%=chipped%></p>
+                <%
+                String sterilized = ""; 
+                if (pet.isSterilized() == true){
+                  sterilized = "Στειρωμένο";
+                } else {
+                  sterilized = "Όχι Στειρωμένο";
+                }
+                %>
+                <p><i class="fas fa-cut"></i> <%=sterilized%></p> 
+                <p><%=pet.getDescription()%>
                 </p>
-                <button class="check-button"><i class="fas fa-check"></i>  Έγκριση</button>
-                <button class="reject-button"><i class="fas fa-times"></i>  Απόρριψη</button>
+                <button type="submit" class="check-button"><i class="fas fa-check"></i>  Έγκριση</button>
+                <button type="submit" class="reject-button"><i class="fas fa-times"></i>  Απόρριψη</button>
             </div>
+            <%
+            }
+            %>
         </div>
     </div>
 </body>

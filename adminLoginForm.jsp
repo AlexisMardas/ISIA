@@ -1,6 +1,7 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page errorPage="errorPage.jsp"%>
 <%@ page import="paradoteo2.*" %>
+
 <!doctype html>
 <html lang="el">
   <head>
@@ -41,10 +42,10 @@
       
 </nav>
 
-  <div class="login-box" style="height: fit-content"; method="POST" action="loginController.jsp">
+  <div class="login-box" style="height: fit-content" method="POST" action="AdminLoginServlet">
     <h2>Σύνδεση διαχειριστή</h2>
     <!-- Action must be changed -->
-    <form action="pendingPosts.jsp" method="GET">
+    <form action="AdminLoginServlet" method="POST">
         <div class="input-container">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required>
