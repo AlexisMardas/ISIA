@@ -14,7 +14,7 @@
           </a>
           <ul class="dropdown-menu text-small" style="margin-left: -25%;">
             <li><a class="dropdown-item" href="loginForm.jsp">Σύνδεση/Εγγραφή</a></li>
-            <li><a class="dropdown-item" href="showMyPosts.jsp">Οι αγγελίες μου</a></li>
+            <li><a class="dropdown-item" href="MyPostsServlet">Οι αγγελίες μου</a></li>
         </ul>
         </div>     
       </nav>
@@ -31,7 +31,7 @@
             </svg><%= user.getUsername()%>
           </a>
           <ul class="dropdown-menu text-small" style="margin-left: -25%;">
-            <li><a class="dropdown-item" href="showMyPosts.jsp">Οι αγγελίες μου</a></li>
+            <li><a class="dropdown-item" href="MyPostsServlet">Οι αγγελίες μου</a></li>
             <li><a class="dropdown-item" href="LogoutServlet">Αποσύνδεση</a></li>
         </ul>
         </div>     

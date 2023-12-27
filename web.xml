@@ -109,6 +109,30 @@
         <url-pattern>/AdminLoginServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>MyPostsServlet</servlet-name>
+        <servlet-class>
+           paradoteo2.MyPostsServlet
+        </servlet-class>
+    </servlet>
+
+     <servlet-mapping>
+        <servlet-name>MyPostsServlet</servlet-name>
+        <url-pattern>/MyPostsServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ApplicantsServlet</servlet-name>
+        <servlet-class>
+           paradoteo2.ApplicantsServlet
+        </servlet-class>
+    </servlet>
+
+     <servlet-mapping>
+        <servlet-name>ApplicantsServlet</servlet-name>
+        <url-pattern>/ApplicantsServlet</url-pattern>
+    </servlet-mapping>
+
   
   
 </web-app>

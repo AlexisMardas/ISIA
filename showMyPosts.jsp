@@ -1,6 +1,8 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page errorPage="errorPage.jsp"%>
 <%@ page import="paradoteo2.*" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.sql.Date" %>
 
 
 
@@ -46,43 +48,31 @@
   </nav>
 
   <div class="pet-grid">
-    <!-- First Pet Adoption Post -->
-    <div class="pet-post">
-      <div class="pet-image-container">
-        <img class="pet-image" src="images/cat1.jpg" alt="Pet Image">
-      </div>
-      <div class="pet-details">
-        <p class="pet-name">Χερούλης</p>
-        <p class="upload-date">Ημερομηνία ανάρτησης: 29-10-2023</p>
-        <div class="buttons">
-          <a href="showApplicants.jsp">
-          <button class="button" id="morebutton" >Περισσότερα</button>
-        </a>
-        <a href="#">
-          <button class="button" id="deletebutton">Διαγραφή</button>
-        </a>
+    <% List<Object[]> myposts = (List<Object[]>) request.getAttribute("myposts");
+       for (Object[] post : myposts) { %>
+        <div class="pet-post">
+          <div class="pet-image-container">
+            <img class="pet-image" src="images/<%=(String) post[3] %>" alt="Pet Image">
+          </div>
+          <div class="pet-details">
+            <p class="pet-name"><%=(String) post[2] %></p>
+            <p class="upload-date">Uploaded on: <%= post[1].toString() %></p>
+            <div class="buttons">
+              <a href="ApplicantsServlet?postID=<%=Integer.toString((Integer) post[0]) %>">
+              <button class="button" id="morebutton" >Περισσότερα</button>
+            </a>
+            <a href="#">
+              <button class="button" id="deletebutton">Διαγραφή</button>
+            </a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Second Pet Adoption Post -->
-    <div class="pet-post">
-      <div class="pet-image-container">
-        <img class="pet-image" src="images/dog1.jpg" alt="Pet Image">
-      </div>
-      <div class="pet-details">
-        <p class="pet-name">Μαξ</p>
-        <p class="upload-date">Ημερομηνία ανάρτησης: 29-10-2023</p>
-        <div class="buttons">
-          <a href="showApplicants.jsp">
-          <button class="button" id="morebutton" >Περισσότερα</button>
-        </a>
-        <a href="#">
-          <button class="button" id="deletebutton">Διαγραφή</button>
-        </a>
-        </div>
-      </div>
-    </div>
+       <% } %>
+   
+    
+
+  
 
     
   </div>

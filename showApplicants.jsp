@@ -1,6 +1,7 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page errorPage="errorPage.jsp"%>
 <%@ page import="paradoteo2.*" %>
+<%@ page import="java.util.List" %>
 
 
 <!doctype html>
@@ -44,8 +45,10 @@
       <%@ include file="navbar.jsp" %>
         
   </nav>
-
+  <!-- EDIT APPLICATION CLASS -->
    <div class="applications">
+    <% List<Application> applications = (List<Application>) request.getAttribute("applications");
+       for (Application application : applications) { %> 
     <div class="application">
         <div class="header">
             <h2>Γίαννης Παπαδόπουλος</h2>
@@ -67,49 +70,8 @@
             <p>Σχόλια: Έχω μεγάλη αυλή</p>
         </div>
     </div>
-    <!-- Add more application entries as needed -->
-    <div class="application">
-      <div class="header">
-          <h2>Γίαννης Παπαδόπουλος</h2>
-          <button class="expand-button" title="Περισσότερα">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
-          </svg>
-          </button>
-      </div>
-      <div class="info">
-          <p>Ημερομηνία αίτησης: 3-11-2023</p>
-          <p>Email: john.papa@example.com</p>
-          <p>Τηλέφωνο: 6945021224</p>
-          <p>Τοποθεσία: Μενίδι, Αθήνα</p>
-      </div>
-      <div class="expand-info">
-          <p>Άλλα κατοικίδια: Ναι</p>
-          <p>Προηγούμενη εμπειρία με κατοικίδια: Όχι</p>
-          <p>Σχόλια: Έχω μεγάλη αυλή</p>
-      </div>
-  </div>
-  <div class="application">
-    <div class="header">
-        <h2>Γίαννης Παπαδόπουλος</h2>
-        <button class="expand-button" title="Περισσότερα">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
-        </svg>
-        </button>
-    </div>
-    <div class="info">
-        <p>Ημερομηνία αίτησης: 3-11-2023</p>
-        <p>Email: john.papa@example.com</p>
-        <p>Τηλέφωνο: 6945021224</p>
-        <p>Τοποθεσία: Μενίδι, Αθήνα</p>
-    </div>
-    <div class="expand-info">
-        <p>Άλλα κατοικίδια: Ναι</p>
-        <p>Προηγούμενη εμπειρία με κατοικίδια: Όχι</p>
-        <p>Σχόλια: Έχω μεγάλη αυλή</p>
-    </div>
-</div>
+    <% } %>
+    
 </div>
 </body>	
 
