@@ -19,7 +19,10 @@ public class ApplicantsServlet extends HttpServlet {
 
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            request.setAttribute("error", e.getMessage());
+            RequestDispatcher dispatcher = request.getRequestDispatcher("errorPage.jsp");
+            dispatcher.forward(request, response);
+            
         }
 
 

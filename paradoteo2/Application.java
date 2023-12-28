@@ -90,7 +90,7 @@ public class Application {
 
         DbConnection db = new DbConnection();
         Connection con = null;
-        String query = "SELECT application.dateOfApplication, application.previousExperience, application.otherPets, application.comments, users.username, users.email, users.location, users.phoneNumber "
+        String query = "SELECT application.dateOfApplication, application.previousExperience, application.otherPets, application.comments, users.fullName, users.email, users.location, users.phoneNumber "
         + "FROM application "
         + "INNER JOIN users ON application.userID = users.userID "
         + "WHERE application.postID = ?;";
@@ -113,13 +113,13 @@ public class Application {
                     String comments = rs.getString("application.comments");
         
                     // user information
-                    String username = rs.getString("users.username");
+                    String fullName = rs.getString("users.fullName");
                     String email = rs.getString("users.email");
                     String location = rs.getString("users.location");
                     String phoneNumber = rs.getString("users.phoneNumber");
         
                     User user = new User();
-                    user.setUsername(username);
+                    user.setFullName(fullName);
                     user.setEmail(email);
                     user.setLocation(location);
                     user.setPhoneNumber(phoneNumber);

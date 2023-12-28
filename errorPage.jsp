@@ -59,7 +59,10 @@
 
 					<h2 style="color:blue; text-align:center;"> <b>Description</b> </h2>
 
-					<% if(exception != null) { %>	                  	
+					<% if (request.getAttribute("error") != null) { %>
+            <p><code><%=(String) request.getAttribute("error") %></code></p>	
+          <% } 
+            if(exception != null) { %>	                  	
 						<p><code><%=exception %></code></p>						
 					<% } %>		
 

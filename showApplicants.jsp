@@ -2,8 +2,9 @@
 <%@ page errorPage="errorPage.jsp"%>
 <%@ page import="paradoteo2.*" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.sql.Date" %>
 
-
+<%@ include file="authenticationGuard.jsp" %>
 <!doctype html>
 <html lang="el">
 
@@ -47,11 +48,12 @@
   </nav>
   <!-- EDIT APPLICATION CLASS -->
    <div class="applications">
-    <% List<Application> applications = (List<Application>) request.getAttribute("applications");
-       for (Application application : applications) { %> 
+    <% List<Application> apps = (List<Application>) request.getAttribute("applications");
+       for (Application app : apps) {
+        User applicant = app.getUser(); %> 
     <div class="application">
         <div class="header">
-            <h2>Γίαννης Παπαδόπουλος</h2>
+            <h2><%=applicant.getFullName() %></h2>
             <button class="expand-button" title="Περισσότερα">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
@@ -59,15 +61,15 @@
             </button>
         </div>
         <div class="info">
-            <p>Ημερομηνία αίτησης: 3-11-2023</p>
-            <p>Email: john.papa@example.com</p>
-            <p>Τηλέφωνο: 6945021224</p>
-            <p>Τοποθεσία: Μενίδι, Αθήνα</p>
+            <p>Application date: <%=app.getDateOfApplication().toString() %></p>
+            <p>Email: <%=applicant.getEmail() %></p>
+            <p>Phone Number: <%=applicant.getPhoneNumber() %></p>
+            <p>Location: <%=applicant.getLocation()  %></p>
         </div>
         <div class="expand-info">
-            <p>Άλλα κατοικίδια: Ναι</p>
-            <p>Προηγούμενη εμπειρία με κατοικίδια: Όχι</p>
-            <p>Σχόλια: Έχω μεγάλη αυλή</p>
+            <p>Other pets: <%=app.getOtherPets() ? "Yes" : "No" %> </p>
+            <p>Previous experience: <%=app.getPreviousExperience() ? "Yes" : "No" %></p>
+            <p>Comments: <%=app.getComments() %></p>
         </div>
     </div>
     <% } %>

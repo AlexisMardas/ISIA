@@ -47,9 +47,11 @@
         
   </nav>
 
-  <div class="pet-grid">
+  
     <% List<Object[]> myposts = (List<Object[]>) request.getAttribute("myposts");
-       for (Object[] post : myposts) { %>
+      if (myposts.size() != 0) { %>
+      <div class="pet-grid">
+       <% for (Object[] post : myposts) { %>
         <div class="pet-post">
           <div class="pet-image-container">
             <img class="pet-image" src="images/<%=(String) post[3] %>" alt="Pet Image">
@@ -61,21 +63,31 @@
               <a href="ApplicantsServlet?postID=<%=Integer.toString((Integer) post[0]) %>">
               <button class="button" id="morebutton" >Περισσότερα</button>
             </a>
-            <a href="#">
+            <a href="DeletePostServlet?postID=<%=Integer.toString((Integer) post[0]) %>">
               <button class="button" id="deletebutton">Διαγραφή</button>
             </a>
             </div>
           </div>
         </div>
-
        <% } %>
+      </div>
+      <% } else { %>
+        <div class="jumbotron" style="margin-top: 10%; ">
+          <div class="container" style="background-color:  #eee1cd; border: solid black 2px; border-radius: 20px;" >
+            <h1>You have not uploaded any posts!</h1>
+            <p>To upload a post please click the following button and fill in the form.</p>
+            <p><a class="btn btn-primary btn-lg" href="uploadForm.jsp" role="button">Upload Post</a></p>
+          </div>
+        </div>
+
+      <% } %>
    
     
 
   
 
     
-  </div>
+  
 
   </body>
 
