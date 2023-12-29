@@ -60,10 +60,13 @@
         
   </nav>
 
-    <div class="pet-details">
-        <div class="post">
+    
+        
             <% List<Pet> pendingPosts = (List<Pet>) request.getAttribute("pendings"); 
-            for (Pet pet : pendingPosts) { %>
+            if (pendingPosts.size() != 0) { %>
+            <div class="pet-details">
+            <% for (Pet pet : pendingPosts) { %>
+            <div class="post">
             <img src="images/<%=pet.getPhoto()%>" alt="Pet 1">
               <div class="post-info">
                 
@@ -111,13 +114,29 @@
                 <p><i class="fas fa-cut"></i> <%=sterilized%></p> 
                 <p><%=pet.getDescription()%>
                 </p>
-                <button type="submit" class="check-button"><i class="fas fa-check"></i>  Έγκριση</button>
-                <button type="submit" class="reject-button"><i class="fas fa-times"></i>  Απόρριψη</button>
+                <a href="DecisionServlet?petID=<%=pet.getPetid()%>&decision=accepted">
+                  <button  class="check-button"><i class="fas fa-check"></i>  Έγκριση</button>
+                </a>
+                <a href="DecisionServlet?petID=<%=pet.getPetid()%>&decision=rejected">
+                  <button  class="reject-button"><i class="fas fa-times"></i>  Απόρριψη</button>
+                </a>
             </div>
+          </div>
             <%
             }
             %>
-        </div>
-    </div>
+          </div>
+          <% } else { %>
+            <div class="jumbotron" style="margin-top: 10%; ">
+              <div class="container" style="background-color:  #eee1cd; border: solid black 2px; border-radius: 20px;" >
+                <h1>There are no pending posts!</h1>
+                <p>To refresh this page click the button below</p>
+                <p><a class="btn btn-primary btn-lg" href="PendingPostsServlet" role="button">Refresh</a></p>
+              </div>
+            </div>
+
+          <% } %>
+        
+    
 </body>
 </html>

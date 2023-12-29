@@ -145,6 +145,34 @@
         <url-pattern>/DeletePostServlet</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>DecisionServlet</servlet-name>
+        <servlet-class>
+           paradoteo2.DecisionServlet
+        </servlet-class>
+    </servlet>
+
+     <servlet-mapping>
+        <servlet-name>DecisionServlet</servlet-name>
+        <url-pattern>/DecisionServlet</url-pattern>
+    </servlet-mapping>
+
+     <servlet>
+        <servlet-name>PendingPostsServlet</servlet-name>
+        <servlet-class>
+           paradoteo2.PendingPostsServlet
+        </servlet-class>
+    </servlet>
+
+     <servlet-mapping>
+        <servlet-name>PendingPostsServlet</servlet-name>
+        <url-pattern>/PendingPostsServlet</url-pattern>
+    </servlet-mapping>
+
+    
+
+
   
   
 </web-app>
