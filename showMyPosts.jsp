@@ -54,7 +54,7 @@
        <% for (Object[] post : myposts) { %>
         <div class="pet-post">
           <div class="pet-image-container">
-            <img class="pet-image" src="images/<%=(String) post[3] %>" alt="Pet Image">
+            <img class="pet-image" src="images/<%=(String) post[3] %>" alt="Pet Image" style="width: 198px;height: 198px;">
           </div>
           <div class="pet-details">
             <p class="pet-name"><%=(String) post[2] %></p>
