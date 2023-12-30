@@ -127,7 +127,7 @@
             %>
           </div>
           <% } else { %>
-            <div class="jumbotron" style="margin-top: 10%; ">
+            <div class="jumbotron" style="margin-top: 10%; max-width: 70%; margin-left: 17%; ">
               <div class="container" style="background-color:  #eee1cd; border: solid black 2px; border-radius: 20px;" >
                 <h1>There are no pending posts!</h1>
                 <p>To refresh this page click the button below</p>
