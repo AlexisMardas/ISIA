@@ -48,7 +48,7 @@
 
     <div class="pet-details">
         <div class="post">
-            <img src="images/<%=pet.getPhoto()%>" alt="Pet 1"  style="width: 500px;height: 650px;">
+            <img src="images/<%=pet.getPhoto()%>" alt="Pet 1"  style="width: 500px;height: 570px;">
             <div class="post-info">
                 
                 <h2><%= pet.getPname() %></h2>
