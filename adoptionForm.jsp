@@ -14,7 +14,7 @@
 
     <meta charset="utf-8">
    
-    <title>Αίτηση υιοθεσίας</title>
+    <title>Adoption Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/adoptionForm.css">
     <link rel="icon" href="images/favicon.ico">
@@ -34,13 +34,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="home.jsp">Αρχική Σελίδα</a>
+            <a class="nav-link active" aria-current="page" href="home.jsp">Home Page</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="searchForm.jsp">Αναζήτηση</a>
+            <a class="nav-link active" href="searchForm.jsp">Search</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="uploadForm.jsp">Ανάρτηση Αγγελίας</a>
+            <a class="nav-link active" href="uploadForm.jsp">Create Post</a>
           </li>
         </ul>
       </div>
@@ -53,55 +53,55 @@
  <% User user = (User) session.getAttribute("authenticatedUser");
     String petID = request.getParameter("petID"); %>
 <div class="adoption-form" style="margin-top: 5%;">
-    <h2>Αίτηση υιοθεσίας κατοικιδίου</h2>
+    <h2>Adoption Form</h2>
 
     <form action="SubmitApplicationServlet" method="post"> 
         <input type="hidden" name="petID" value="<%=petID %>">    
 
         <div class="form-group">
-            <label for="fullName">Ονοματεπώνυμο </label>
-            <input type="text"  class="form-control" id="fullName" name="fullName" placeholder="Εισάγετε το ονοματεπώνυμο σας" value="<%=user.getFullName() %>" readonly >
+            <label for="fullName">Fullname </label>
+            <input type="text"  class="form-control" id="fullName" name="fullName" placeholder="Insert your Fullname" value="<%=user.getFullName() %>" readonly >
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Εισάγετε το email σας" value="<%=user.getEmail() %>" readonly>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Insert your email" value="<%=user.getEmail() %>" readonly>
         </div>
         <div class="form-group">
-            <label for="phone">Τηλέφωνο</label>
-            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Εισάγετε ένα τηλέφωνο επικοινωνίας" value="<%=user.getPhoneNumber() %>" readonly>
+            <label for="phone">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Insert your phone number" value="<%=user.getPhoneNumber() %>" readonly>
         </div>
         <div class="form-group">
-            <label for="location">Τοποθεσία</label>
-            <input type="text" class="form-control" id="location" name="location" placeholder="Εισάγετε την τοποθεσία σας" value="<%=user.getLocation() %>" readonly>
+            <label for="location">Location</label>
+            <input type="text" class="form-control" id="location" name="location" placeholder="Insert your location" value="<%=user.getLocation() %>" readonly>
         </div>
         <div class="form-group">
-            <label>Έχετε άλλα κατοικίδια;</label><br>
+            <label>Do you have any other pets?</label><br>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="otherPets" id="yesPets" value="yes">
-                <label class="form-check-label" for="yesPets">Ναι</label>
+                <label class="form-check-label" for="yesPets">Yes</label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="otherPets" id="noPets" value="no">
-                <label class="form-check-label" for="noPets">Όχι</label>
+                <label class="form-check-label" for="noPets">No</label>
             </div>
         </div>
         <div class="form-group">
-            <label>Έχετε προηγούμενη εμπειρία ως ιδιοκτήτης κατοικιδίου;</label><br>
+            <label>Do you have previous experience as a pet owner?</label><br>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="previousExperience" id="yesExperience" value="yes">
-                <label class="form-check-label" for="yesExperience">Ναι</label>
+                <label class="form-check-label" for="yesExperience">Yes</label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="previousExperience" id="noExperience" value="no">
-                <label class="form-check-label" for="noExperience">Όχι</label>
+                <label class="form-check-label" for="noExperience">No</label>
             </div>
         </div>
         <div class="form-group">
-            <label for="comments">Σχόλια</label>
+            <label for="comments">Comments</label>
             <textarea class="form-control" id="comments"name="comments" rows="4"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Υποβολή </button>
+        <button type="submit" class="btn btn-primary">Submit </button>
 
     </form>
 

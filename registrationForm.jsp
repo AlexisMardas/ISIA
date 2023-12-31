@@ -3,11 +3,11 @@
 <%@ page import="paradoteo2.*" %>
 
 <!doctype html>
-<html lang="el">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5">
-    <title>Εγγραφή</title>
+    <title>Sign Up</title>
     <link rel="stylesheet" href="css/mystyle.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="icon" href="images/favicon.ico">
@@ -47,13 +47,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="home.jsp">Αρχική Σελίδα</a>
+            <a class="nav-link active" aria-current="page" href="home.jsp">Home Page</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="searchForm.jsp">Αναζήτηση</a>
+            <a class="nav-link active" href="searchForm.jsp">Search</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="uploadForm.jsp">Ανάρτηση Αγγελίας</a>
+            <a class="nav-link active" href="uploadForm.jsp">Create Post</a>
           </li>
         </ul>
       </div>
@@ -67,8 +67,8 @@
         </svg> Username
       </a>
       <ul class="dropdown-menu text-small" style="margin-left: -25%;">
-        <li><a class="dropdown-item" href="loginForm.jsp">Σύνδεση/Εγγραφή</a></li>
-        <li><a class="dropdown-item" href="showMyPosts.jsp">Οι αγγελίες μου</a></li>
+        <li><a class="dropdown-item" href="loginForm.jsp">Log in / Sign Up</a></li>
+        <li><a class="dropdown-item" href="MyPostsServlet">My Posts</a></li>
         <!--<li><hr class="dropdown-divider"></li>
         <li><a class="dropdown-item" href="index.jsp">Αποσύνδεση</a></li>-->
     </ul>
@@ -87,25 +87,25 @@
       <br>
       <br>
       
-      <h1 class="h3 mb-3 font-weight-normal">Εγγραφή Χρήστη</h1>
-      <label for="inputName" class="sr-only">Ονοματεπώνυμο</label>
-      <input type="text" id="inputName" name="fullname" class="form-control large-input" placeholder="Ονοματεπώνυμο" required>
+      <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+      <label for="inputName" class="sr-only">Fullname</label>
+      <input type="text" id="inputName" name="fullname" class="form-control large-input" placeholder="Fullname" required>
       <label for="inputMail" class="sr-only">Email</label>
       <input type="text" id="inputMail" name="email" class="form-control large-input " placeholder="Email" required>
-      <label for="inputPhone" class="sr-only">Τηλέφωνο</label>
-      <input type="number" id="inputPhone" name="phonenumber" class="form-control large-input" placeholder="Τηλέφωνο" required>
-      <label for="inputLocation" class="sr-only">Τοποθεσία</label>
-      <input type="text" id="inputLocation" name="location" class="form-control large-input" placeholder="Τοποθεσία" required>
-      <label for="inputBirthday" class="sr-only">Ημερομηνία γέννησης</label>
-      <input type="date" id="inputBirthday" name="dob" class="form-control large-input"  placeholder="Ημερομηνία γέννησης" required>
+      <label for="inputPhone" class="sr-only">Phone Number</label>
+      <input type="number" id="inputPhone" name="phonenumber" class="form-control large-input" placeholder="Phone Number" required>
+      <label for="inputLocation" class="sr-only">Location</label>
+      <input type="text" id="inputLocation" name="location" class="form-control large-input" placeholder="Location" required>
+      <label for="inputBirthday" class="sr-only">Date of Birth</label>
+      <input type="date" id="inputBirthday" name="dob" class="form-control large-input"  placeholder="Date of Birth" required>
       <label for="newUsername" class="sr-only">Username</label>
-      <input type="text" id="newUsername" name="username" class="form-control large-input" placeholder="Όρισε Username" required autofocus>
+      <input type="text" id="newUsername" name="username" class="form-control large-input" placeholder="Create Username" required autofocus>
       <label for="newPassword" class="sr-only">Password</label>
-      <input type="password" id="newPassword" name="password" class="form-control large-input" placeholder="Όρισε Password" required>
+      <input type="password" id="newPassword" name="password" class="form-control large-input" placeholder="Create Password" required>
       
       <div class="checkbox mb-3">
       </div>
-        <button type="submit" id="buttonregistration" class="btn btn-primary">Εγγραφή</button>
+        <button type="submit" id="buttonregistration" class="btn btn-primary">Register</button>
        </p>
 
       

@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" >
-    <title>Αγγελίες</title>
+    <title>Posts</title>
     <link rel="stylesheet" href="css/shopost.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="icon" href="images/favicon.ico">
@@ -31,13 +31,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="home.jsp">Αρχική Σελίδα</a>
+              <a class="nav-link active" aria-current="page" href="home.jsp">Home Page</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="home.jsp">Αναζήτηση</a>
+              <a class="nav-link active" href="searchForm.jsp">Search</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="uploadForm.jsp">Ανάρτηση Αγγελίας</a>
+              <a class="nav-link active" href="uploadForm.jsp">Create Post</a>
             </li>
           </ul>
         </div>
@@ -55,34 +55,13 @@
             <div class="post-info">
                 <h2><%=(String) post[1] %></h2>
                 <p><i class="fas fa-map-marker-alt"></i> <%=(String) post[2] %> </p> <!-- Location icon -->
-                <button onclick="showMore('<%=post[0] %>')">Περισσότερα</button>
+                <button onclick="showMore('<%=post[0] %>')">More</button>
             </div>
         </div>
          
       <% } %>
     </div>
 
-      <!-- Useless crap
-       <div class="post">
-              <img src="images/pet2.jpg" alt="Pet 2">
-              <div class="post-info">
-                  <h2>Mary</h2>
-                  <p><i class="fas fa-map-marker-alt"></i> Καλλιθέα, Αθήνα</p> 
-                  <button onclick="showMore('11')">Περισσότερα</button>
-              </div>
-          </div>
-         
-          
-          <div class="post">
-            <img src="images/pet3.jpg" alt="Pet 3">
-            <div class="post-info">
-                <h2>Buddy</h2>
-                <p><i class="fas fa-map-marker-alt"></i> Ζωγράφου, Αθήνα</p> 
-                <button onclick="showMore('12')">Περισσότερα</button>
-            </div>
-        </div>
-      </div>
-      -->
 
       <script>
         function showMore(petId) {

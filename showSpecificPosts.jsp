@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" >
-    <title>Πληροφορίες αγγελίας</title>
+    <title>Post Info</title>
     <link rel="stylesheet" href="css/shospecific.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="icon" href="images/favicon.ico">
@@ -29,13 +29,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="home.jsp">Αρχική Σελίδα</a>
+              <a class="nav-link active" aria-current="page" href="home.jsp">Home Page</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="searchForm.jsp">Αναζήτηση</a>
+              <a class="nav-link active" href="searchForm.jsp">Search</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="uploadForm.jsp">Ανάρτηση Αγγελίας</a>
+              <a class="nav-link active" href="uploadForm.jsp">Create Post</a>
             </li>
           </ul>
         </div>
@@ -52,20 +52,28 @@
             <div class="post-info">
                 
                 <h2><%= pet.getPname() %></h2>
-                <p><i class="fas fa-paw"></i> Είδος: <%= pet.getAnimalType() %></p>
-                <p><i class="fas fa-venus-mars"></i> Φύλο: <%= pet.getGender() %></p>
-                <p><i class="fas fa-birthday-cake"></i> Ηλικία: <%= Integer.toString(pet.getAge()) %> years old</p> 
-                <p><i class="fas fa-weight"></i> Βάρος: <%= Double.toString(pet.getWeight()) %></p>
-                <p><i class="fas fa-solid fa-palette"> </i> <%= pet.getMaincolor() %> </p> 
-                <p><i class="fas fa-map-marker-alt"></i> <%= pet.getLocation() %></p> 
-                <p><i class="fas fa-check"></i> <%= pet.isFullyVaccinated()? "Fully Vaccinated" : "Not Vaccinated" %></p>
+                <p><i class="fas fa-paw"></i> Type: <%= pet.getAnimalType() %></p>
+                <p><i class="fas fa-venus-mars"></i> Gender: <%= pet.getGender() %></p>
+                <p><i class="fas fa-birthday-cake"></i> Age: <%= Integer.toString(pet.getAge()) %> years old</p> 
+                <p><i class="fas fa-weight"></i> Weight: <%= Double.toString(pet.getWeight()) %></p>
+                <p><i class="fas fa-solid fa-palette"> </i> Main Color: <%= pet.getMaincolor() %> </p> 
+                <p><i class="fas fa-map-marker-alt"></i> Location: <%= pet.getLocation() %></p> 
+                <%if(pet.isFullyVaccinated()){
+                %> 
+                <p><i class="fas fa-check"></i> Fully Vaccinated</p>
+                <%} else {
+                %>
+                <p><i class="fa fa-times"></i> Not Vaccinated</p>
+               <% 
+                }
+               %>
                 <p><i class="fas fa-medkit"></i> <%= pet.isChronicdesease()? "Has a chronic desease" : "No chronic desease" %></p>
                 <p><i class="fas fa-cut"></i> <%= pet.isSterilized()? "Sterilized" : "Not sterilized" %></p>
                 <p><i class="fas fa-microchip"></i> <%= pet.isChipped()? "Chipped" : "Not chipped" %></p>
                 <p><%=pet.getDescription() %>
                 </p>
                 <a href="adoptionForm.jsp?petID=<%=pet.getPetid() %>">
-                  <button>Ενδιαφέρομαι για Υιοθεσία</button>
+                  <button>I am interested in adoption</button>
                 </a>
             </div>
         </div>

@@ -5,7 +5,7 @@
 
 
 <!DOCTYPE html>
-<html>
+<html lang="el">
 <head>
 
    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5">
@@ -19,7 +19,7 @@
 
     <meta charset="utf-8">
    
-    <title>Ανάρτηση αγγελίας</title>
+    <title>Create Post</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="icon" href="images/favicon.ico">
     
@@ -35,15 +35,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="home.jsp">Αρχική Σελίδα</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="searchForm.jsp">Αναζήτηση</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="uploadForm.jsp">Ανάρτηση Αγγελίας</a>
-          </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="home.jsp">Home Page</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="searchForm.jsp">Search</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="uploadForm.jsp">Create Post</a>
+            </li>
         </ul>
       </div>
     </div>
@@ -63,100 +63,100 @@
         </a>
   </div>
 </div>
-                     <!-- ΝΑ ΜΠΟΥΝ ΕΠΕΙΓΟΝΤΩΣ NAME ATTRIBUTES-->
+                     
 
     <div class="upload-form">
-        <h2 class="form-title">Δώσε ένα ζωάκι για υιοθεσία</h2>
+        <h2 class="form-title">Give a pet for adoption</h2>
         <form>
           <div class="form-group">
-            <label for="petKind">Είδος του ζώου</label>
-            <input type="text" class="form-control" id="petKind" name="petKind" placeholder="π.χ. γάτα, σκύλος" required>
+            <label for="petKind">Type of pet</label>
+            <input type="text" class="form-control" id="petKind" name="petKind" placeholder="ex. cat, dog" required>
         </div>
         <div class="form-group">
-            <label for="petAge">Ηλικία του ζώου</label>
-            <input type="number" class="form-control" id="petAge" name="petAge" placeholder="Ηλικία σε χρόνια" required>
+            <label for="petAge">Age of pet</label>
+            <input type="number" class="form-control" id="petAge" name="petAge" placeholder="Age in years" required>
         </div>
         <div class="form-group">
-            <label for="petWeight">Βάρος του ζώου</label>
-            <input type="number" class="form-control" id="petWeight" name="petWeight" placeholder="Βάρος σε κιλά" required>
+            <label for="petWeight">Weight of pet</label>
+            <input type="number" class="form-control" id="petWeight" name="petWeight" placeholder="Weight in kg" required>
         </div>
         <div class="form-group">
-          <label for="petGender">Φύλο του ζώου</label>
+          <label for="petGender">Gender of pet </label>
           <div class="gender-input">
               <select class="form-control" id="petGender" name="petGender" required>
-                  <option value="Male">Αρσενικό</option>
-                  <option value="Female">Θηλυκό</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
               </select>
               <div class="gender-cursor"></div>
           </div>
       </div>
       
         <div class="form-group">
-            <label for="petName">Όνομα του ζώου</label>
-            <input type="text" class="form-control" id="petName" name="petName" placeholder="Όνομα του ζώου" required>
+            <label for="petName">Name of pet</label>
+            <input type="text" class="form-control" id="petName" name="petName" placeholder="Name of pet" required>
         </div>
         <div class="form-group">
-            <label for="petColor">Βασικό χρώμα του ζώου</label>
-            <input type="text" class="form-control" id="petColor" name="petColor" placeholder="π.χ. μαύρο, καφέ" required>
+            <label for="petColor">Main color of pet</label>
+            <input type="text" class="form-control" id="petColor" name="petColor" placeholder="ex. black, brown" required>
         </div>
         <div class="form-group">
-            <label for="location">Τοποθεσία</label>
-            <input type="text" class="form-control" id="location" name="location" placeholder="Η τοποθεσία σας" required>
+            <label for="location">Location</label>
+            <input type="text" class="form-control" id="location" name="location" placeholder="Your location" required>
         </div>
         <div class="form-group">
-            <label>Είναι το ζώο πλήρως εμβολιασμένο;</label><br>
+            <label>Is it fully vaccinated?</label><br>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="vaccinated" id="yesVaccinated" value="yes">
-                <label class="form-check-label" for="yesVaccinated">Ναι</label>
+                <label class="form-check-label" for="yesVaccinated">Yes</label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="vaccinated" id="noVaccinated" value="no">
-                <label class="form-check-label" for="noVaccinated">Όχι</label>
+                <label class="form-check-label" for="noVaccinated">No</label>
             </div>
         </div>
         <div class="form-group">
-            <label>Έχει το ζώο κάποια χρόνια ασθένεια;</label><br>
+            <label>Is there any chronic desease?</label><br>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="chronicDisease" id="yesChronicDisease" value="yes">
-                <label class="form-check-label" for="yesChronicDisease">Ναι</label>
+                <label class="form-check-label" for="yesChronicDisease">Yes</label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="chronicDisease" id="noChronicDisease" value="no">
-                <label class="form-check-label" for="noChronicDisease">Όχι</label>
+                <label class="form-check-label" for="noChronicDisease">No</label>
             </div>
         </div>
         <div class="form-group">
-            <label>Είναι το ζώο τσιπαρισμένο;</label><br>
+            <label>Is the pet chipped?</label><br>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="chipped" id="yesChipped" value="yes">
-                <label class="form-check-label" for="yesChipped">Ναι</label>
+                <label class="form-check-label" for="yesChipped">Yes</label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="chipped" id="noChipped" value="no">
-                <label class="form-check-label" for="noChipped">Όχι</label>
+                <label class="form-check-label" for="noChipped">No</label>
             </div>
         </div>
         <div class="form-group">
-            <label>Είναι το ζώο στειρωμένο;</label><br>
+            <label>Is the pet sterilized?</label><br>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="altered" id="yesAltered" value="yes">
-                <label class="form-check-label" for="yesAltered">Ναι</label>
+                <label class="form-check-label" for="yesAltered">Yes</label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="altered" id="noAltered" value="no">
-                <label class="form-check-label" for="noAltered">Όχι</label>
+                <label class="form-check-label" for="noAltered">No</label>
             </div>
         </div>
         <div class="form-group">
-            <label for="petPhoto">Προσθέστε μία φωτογραφία του ζώου</label>
+            <label for="petPhoto">Add a photo of the pet</label>
             <input type="file" class="form-control" id="petPhoto" name="petPhoto" accept="image/*">
         </div>
         <div class="form-group">
-            <label for="petDescription">Σύντομη περιγραφή του ζώου</label>
-            <textarea class="form-control" id="petDescription" name="petDescription" rows="5" placeholder="Πείτε μας κάποια πράγματα για το συγκεκριμένο ζώο"></textarea>
+            <label for="petDescription">Small description of the pet</label>
+            <textarea class="form-control" id="petDescription" name="petDescription" rows="5" placeholder="Tell us something for your lovely pet"></textarea>
         </div>
 
-            <button type="submit" class="btn btn-primary">Υποβολή για έλεγχο</button>
+            <button type="submit" class="btn btn-primary">Submit for check</button>
         </form>
     </div>
 </body>

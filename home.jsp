@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/newstyles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="icon" href="images/favicon.ico">
-    <title>Αρχική</title>
+    <title>Home</title>
 </head>
 
 <body>
@@ -26,13 +26,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="home.jsp">Αρχική Σελίδα</a>
+              <a class="nav-link active" aria-current="page" href="home.jsp">Home Page</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="searchForm.jsp">Αναζήτηση</a>
+              <a class="nav-link active" href="searchForm.jsp">Search</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="uploadForm.jsp">Ανάρτηση Αγγελίας</a>
+              <a class="nav-link active" href="uploadForm.jsp">Create Post</a>
             </li>
           </ul>
         </div> 
@@ -44,13 +44,13 @@
     <div>
         <header class="hero">
             <div class="hero-content">
-                <h1>Καλώς ήρθατε στο PetLink!</h1>
-                <p>Υιοθέτησε ένα κατοικίδιο και δώσε του <br>του ένα μόνιμο σπίτι!</p>
+                <h1>Welcome to PetLink!</h1>
+                <p>Adopt a lovely pet and give it <br>a permanent home!</p>
                 <div>
-                    <a id="buttonhome1" class="btn btn-lg btn-primary btn-block" style="--bs-btn-padding-y: 0rem" href="searchForm.jsp"> Αναζήτηση Αγγελίας </a>
+                    <a id="buttonhome1" class="btn btn-lg btn-primary btn-block" style="--bs-btn-padding-y: 0rem" href="searchForm.jsp"> Search PetLink Posts </a>
                 </div>
                 <div>
-                    <a id="buttonhome2" class="btn btn-lg btn-primary btn-block" style="--bs-btn-padding-y: 0rem" href="uploadForm.jsp"> Ανάρτηση Αγγελίας </a>
+                    <a id="buttonhome2" class="btn btn-lg btn-primary btn-block" style="--bs-btn-padding-y: 0rem" href="uploadForm.jsp"> Create PetLink Posts </a>
                 </div>
             </div>
         </header>
