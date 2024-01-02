@@ -295,13 +295,34 @@ public class Post {
         PreparedStatement stmt = null;
         Connection con = null;
         Application app = new Application();
-        String query = "DELETE FROM post WHERE postID=? ;";
+        // After the post is deleted we have to also delete the respective pet
+        String query = "SELECT petID FROM post WHERE postID=? ;";
+        String query2 = "DELETE FROM post WHERE postID=? ;";
+        String query3 = "DELETE FROM pet WHERE petID=? ;";
         try {
+            // Delete all connected applications
             app.deleteApplications(postID);
+
             con = db.getConnection();
+            // Find the pet that needs to be deleted
             stmt = con.prepareStatement(query);
             stmt.setInt(1, postID);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            int petID = rs.getInt("petID");
+            rs.close();
+
+            // Delete the post
+            stmt = con.prepareStatement(query2);
+            stmt.setInt(1, postID);
             stmt.executeUpdate();
+
+            // Delete the pet
+            stmt = con.prepareStatement(query3);
+            stmt.setInt(1, petID);
+            stmt.executeUpdate();
+
+
             stmt.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
