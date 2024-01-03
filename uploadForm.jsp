@@ -64,8 +64,12 @@
   </div>
 </div>
                      
+    <% User user = (User) session.getAttribute("authenticatedUser"); %>
 
     <div class="upload-form">
+
+    <form class="form-registration" action="UploadServlet" method="POST">
+
         <h2 class="form-title">Give a pet for adoption</h2>
         <form>
           <div class="form-group">
@@ -158,6 +162,9 @@
 
             <button type="submit" class="btn btn-primary">Submit for check</button>
         </form>
+
+    </form>
+
     </div>
 </body>
 </html>
