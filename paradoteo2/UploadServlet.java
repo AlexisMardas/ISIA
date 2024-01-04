@@ -10,7 +10,7 @@ import javax.servlet.http.*;
                  maxFileSize = 1024 * 1024 * 10,      // 10MB
                  maxRequestSize = 1024 * 1024 * 50)   // 50MB
 
-public class UploadServlet extends HttpServlet {
+public class UploadServlet extends HttpServlet implements Part {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -50,7 +50,7 @@ public class UploadServlet extends HttpServlet {
         try {
 
         Post post = new Post();
-        post.createPost(userId, petKind, petAge, petWeight, petGender, petName, petColor,
+        post.createPost(userID, petKind, petAge, petWeight, petGender, petName, petColor,
                 location, vaccinated, chronicDisease, chipped, altered, photo, petDescription);
 
         response.sendRedirect("home.jsp");
