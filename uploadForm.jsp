@@ -68,7 +68,7 @@
 
     <div class="upload-form">
 
-    <form class="form-registration" action="UploadServlet" method="POST">
+    <form class="form-registration" action="paradoteo2/UploadServlet.java" method="POST">
 
         <h2 class="form-title">Give a pet for adoption</h2>
         <form>
