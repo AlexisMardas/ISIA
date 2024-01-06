@@ -68,7 +68,7 @@
 
     <div class="upload-form">
 
-    <form class="form-registration" action="paradoteo2/UploadServlet.java" method="POST">
+    <form class="form-registration" action="UploadServlet" method="POST" enctype="multipart/form-data">
 
         <h2 class="form-title">Give a pet for adoption</h2>
         <form>
@@ -88,8 +88,8 @@
           <label for="petGender">Gender of pet </label>
           <div class="gender-input">
               <select class="form-control" id="petGender" name="petGender" required>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
+                  <option value="M">Male</option>
+                  <option value="F">Female</option>
               </select>
               <div class="gender-cursor"></div>
           </div>

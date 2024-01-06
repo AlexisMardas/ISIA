@@ -51,19 +51,30 @@
     <% List<Object[]> myposts = (List<Object[]>) request.getAttribute("myposts");
       if (myposts.size() != 0) { %>
       <div class="pet-grid">
-       <% for (Object[] post : myposts) { %>
+       <% for (Object[] mypost : myposts) { %>
         <div class="pet-post">
           <div class="pet-image-container">
-            <img class="pet-image" src="images/<%=(String) post[3] %>" alt="Pet Image" style="width: 198px;height: 198px;">
+            <img class="pet-image" src="images/<%=(String) mypost[3] %>" alt="Pet Image" style="width: 198px;height: 198px;">
           </div>
           <div class="pet-details">
-            <p class="pet-name"><%=(String) post[2] %></p>
-            <p class="upload-date">Uploaded on: <%= post[1].toString() %></p>
+            <p class="pet-name"><%=(String) mypost[2] %></p>
+            <p class="upload-date">Uploaded on: <%= mypost[1].toString() %></p>
+            <% String color = null;
+               String pstatus = (String) mypost[4];
+              if (pstatus.equals("accepted") ) {
+                  color = "green";
+              } else if (pstatus.equals("pending") ) {
+                  color = "#4E92E8";
+              } else {
+                  color = "red";
+
+              } %>
+            <p class="status" style="color: <%=color %>; ">Status: <%=(String) mypost[4] %> </p>
             <div class="buttons">
-              <a href="ApplicantsServlet?postID=<%=Integer.toString((Integer) post[0]) %>">
+              <a href="ApplicantsServlet?postID=<%=Integer.toString((Integer) mypost[0]) %>">
               <button class="button" id="morebutton" >More</button>
             </a>
-            <a href="DeletePostServlet?postID=<%=Integer.toString((Integer) post[0]) %>">
+            <a href="DeletePostServlet?postID=<%=Integer.toString((Integer) mypost[0]) %>">
               <button class="button" id="deletebutton">Delete</button>
             </a>
             </div>

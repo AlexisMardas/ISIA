@@ -2,6 +2,7 @@ package paradoteo2;
 import java.sql.*;
 import java.util.List;
 import java.util.ArrayList;
+import java.io.File;
 
 
 
@@ -258,18 +259,19 @@ public class Post {
         DbConnection db = new DbConnection();
         PreparedStatement stmt = null;
         Connection con = null;
-        String query = "SELECT postID, dateOfPost, pname, photo FROM post, pet WHERE post.petID = pet.petID AND userID=? ;";
+        String query = "SELECT postID, dateOfPost, pname, photo, pstatus FROM post, pet WHERE post.petID = pet.petID AND userID=? ;";
         try {
             con =  db.getConnection();
             stmt = con.prepareStatement(query);
             stmt.setInt(1, userID);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                Object [] info = new Object[4];
+                Object [] info = new Object[5];
                 info[0] = rs.getInt("postID");
                 info[1] = rs.getDate("dateOfPost"); 
                 info[2] = rs.getString("pname");
                 info[3] = rs.getString("photo");
+                info[4] = rs.getString("pstatus");
                 myposts.add(info);
             }
             stmt.close();
@@ -298,7 +300,8 @@ public class Post {
         // After the post is deleted we have to also delete the respective pet
         String query = "SELECT petID FROM post WHERE postID=? ;";
         String query2 = "DELETE FROM post WHERE postID=? ;";
-        String query3 = "DELETE FROM pet WHERE petID=? ;";
+        String query3 = "SELECT photo FROM pet WHERE petID=? ;";
+        String query4 = "DELETE FROM pet WHERE petID=? ;";
         try {
             // Delete all connected applications
             app.deleteApplications(postID);
@@ -310,15 +313,25 @@ public class Post {
             ResultSet rs = stmt.executeQuery();
             rs.next();
             int petID = rs.getInt("petID");
-            rs.close();
 
             // Delete the post
             stmt = con.prepareStatement(query2);
             stmt.setInt(1, postID);
             stmt.executeUpdate();
 
-            // Delete the pet
+            // Delete the pet's image from the server
             stmt = con.prepareStatement(query3);
+            stmt.setInt(1, petID);
+            rs = stmt.executeQuery();
+            rs.next();
+            String path = rs.getString("photo");
+            rs.close();
+            File photo = new File("C:/Program Files/Apache Software Foundation/Tomcat 6.0/webapps/ismgroup28/images/"+path);
+            photo.delete();
+
+
+            // Delete the pet
+            stmt = con.prepareStatement(query4);
             stmt.setInt(1, petID);
             stmt.executeUpdate();
 
