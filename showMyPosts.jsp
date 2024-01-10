@@ -72,7 +72,7 @@
             <p class="status" style="color: <%=color %>; ">Status: <%=(String) mypost[4] %> </p>
             <div class="buttons">
               <a href="ApplicantsServlet?postID=<%=Integer.toString((Integer) mypost[0]) %>">
-              <button class="button" id="morebutton" >More</button>
+              <button class="button" id="morebutton" >View Applicants</button>
             </a>
             <a href="DeletePostServlet?postID=<%=Integer.toString((Integer) mypost[0]) %>">
               <button class="button" id="deletebutton">Delete</button>
@@ -97,7 +97,7 @@
 
   
 
-    
+      <%@ include file="footer.jsp" %>
   
 
   </body>

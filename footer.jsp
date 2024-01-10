@@ -4,11 +4,11 @@
 
 <!-- footer -->
 <div>
-<footer class="navbar-inverse" style="background-color: burlywood; margin-top: 5%; border: solid black 2px;padding: 0.5%;  ">
-    <div class="container" >
+<footer>
+    <div class="container" style="margin-top: 2%;" >
         <div class="row">
             <div class="col-xs-12">
-                <p class="text-center">&copy; Copyright 2023 by PetLink</p>
+                <p class="text-center">&copy; Copyright 2024 by PetLink</p>
             </div>
         </div>
     </div>

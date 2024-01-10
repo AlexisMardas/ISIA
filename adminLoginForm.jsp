@@ -41,6 +41,10 @@
     <%@ include file="navbar.jsp" %>
       
 </nav>
+<% if(request.getAttribute("error_message") != null) { %>		
+  <div class="alert alert-danger text-center" role="alert">Invalid credentials. Please try again.</div>
+<% } %>
+
 
   <div class="login-box" style="height: fit-content" method="POST" action="AdminLoginServlet">
     <h2>Log in as Admin</h2>

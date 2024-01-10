@@ -5,7 +5,7 @@
 <%
 if (session.getAttribute("authenticatedUser") == null) {
 
-    request.setAttribute("error_message", "You are not authorized to view this page!");
+    request.setAttribute("message", "You are not authorized to view this page!");
 
 %>
     <jsp:forward page="loginForm.jsp" />

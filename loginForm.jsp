@@ -46,7 +46,11 @@
   <% // Get the referrer, so that after the login the user will be rediected to the correct page 
       String referrer = request.getHeader("referer");
       // Keep only the last part of the url
-      referrer = referrer.substring(referrer.lastIndexOf("/") + 1); %>
+      referrer = referrer.substring(referrer.lastIndexOf("/") + 1); 
+
+      if(request.getAttribute("error_message") != null) { %>		
+        <div class="alert alert-danger text-center" role="alert">Invalid credentials. Please try again.</div>
+    <% } %>
 
 
     <div class="login-box" style="height: fit-content;">

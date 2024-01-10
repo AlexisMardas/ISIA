@@ -11,7 +11,6 @@ public class Application {
     public boolean previousExperience;
     public boolean otherPets;
     public String comments;
-
     private User user;
 
     public Application() {

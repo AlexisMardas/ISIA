@@ -101,7 +101,7 @@
             <textarea class="form-control" id="comments"name="comments" rows="4"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit </button>
+        <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Submit </button>
 
     </form>
 
@@ -110,7 +110,7 @@
 
 </div>
 
-
+<%@ include file="footer.jsp" %>
 
 </body>
 </html>

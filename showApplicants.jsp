@@ -47,9 +47,11 @@
         
   </nav>
   <!-- EDIT APPLICATION CLASS -->
-   <div class="applications">
+   
     <% List<Application> apps = (List<Application>) request.getAttribute("applications");
-       for (Application app : apps) {
+       if (apps.size() != 0) { %>
+    <div class="applications">
+       <% for (Application app : apps) {
         User applicant = app.getUser(); %> 
     <div class="application">
         <div class="header">
@@ -72,9 +74,19 @@
             <p>Comments: <%=app.getComments() %></p>
         </div>
     </div>
+    <% }  %>
+  </div>
+    <% } else { %> 
+      <div class="jumbotron" style="margin-top: 10%; max-width: 70%; margin-left: 17%; ">
+        <div class="container" style="background-color:  #eee1cd; border: solid black 2px; border-radius: 20px;" >
+          <h1>There are no applicants for this post!</h1>
+          <p>Click the button to return to the previous page.</p>
+          <p><a class="btn btn-primary btn-lg" href="MyPostsServlet" role="button">My posts</a></p>
+        </div>
+      </div>
     <% } %>
     
-</div>
+    <%@ include file="footer.jsp" %>
 </body>	
 
 </html>	
